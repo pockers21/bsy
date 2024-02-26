@@ -1,3 +1,4 @@
+
 #include "bsy/util/math.hpp"
 
 
@@ -119,6 +120,40 @@ template void bsy_cpu_mem_set<int>(const int N, const int alpha, int* Y);
 template void bsy_cpu_mem_set<float>(const int N, const float alpha, float* Y);
 template void bsy_cpu_mem_set<double>(const int N, const double alpha, double* Y);
 
+
+template <>
+void bsy_scal<float>(const int N, const float alpha, float *X) {
+  cblas_sscal(N, alpha, X, 1);
+}
+
+template <>
+void bsy_scal<double>(const int N, const double alpha, double *X) {
+  cblas_dscal(N, alpha, X, 1);
+}
+
+
+
+template <typename Dtype>
+void bsy_copy(const int N, const Dtype* X, Dtype* Y) {
+  if (X != Y) {
+    if (HAVE_CUDA) {
+#ifndef CPU_ONLY
+      // NOLINT_NEXT_LINE(caffe/alt_fn)
+      CUDA_CHECK(cudaMemcpy(Y, X, sizeof(Dtype) * N, cudaMemcpyDefault));
+#else
+      NO_GPU;
+#endif
+    } else {
+      memcpy(Y, X, sizeof(Dtype) * N);  // NOLINT(caffe/alt_fn)
+    }
+  }
+}
+
+template void bsy_copy<int>(const int N, const int* X, int* Y);
+template void bsy_copy<unsigned int>(const int N, const unsigned int* X,
+    unsigned int* Y);
+template void bsy_copy<float>(const int N, const float* X, float* Y);
+template void bsy_copy<double>(const int N, const double* X, double* Y);
 
 
 }

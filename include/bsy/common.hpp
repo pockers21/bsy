@@ -11,5 +11,7 @@
 #include <string>
 #include <utility>  // pair
 #include <vector>
+
+#include "bsy/util/gpu_relative.hpp"
 using namespace std;
 
