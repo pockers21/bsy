@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbsyproto.a  CMakeFiles/bsyproto.dir/__/__/include/bsy/proto/bsy.pb.cc.o
+/usr/bin/ranlib libbsyproto.a
