@@ -1,3 +1,0 @@
-# Hashes of file build rules.
-0edc74a35cdd2a73f0ad96a440d807bf include/bsy/proto/bsy.pb.cc
-4010b97f5d7ef80b9266c1ac7bbef89e src/bsy/CMakeFiles/cuda_compile_1.dir/cuda_compile_1_generated_test.cu.o
