@@ -18,3 +18,7 @@
 #include "bsy/proto/bsy.pb.h"
 using namespace std;
 
+
+#define FORBID_COPY_AND_ASSIGN(classname) \
+    classname(const classname&) = delete; \
+    classname& operator=(const classname&) = delete;

@@ -47,7 +47,7 @@ struct TableStruct_bsy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -55,6 +55,12 @@ struct TableStruct_bsy_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bsy_2eproto;
 namespace bsy {
+class DataBlockProto;
+class DataBlockProtoDefaultTypeInternal;
+extern DataBlockProtoDefaultTypeInternal _DataBlockProto_default_instance_;
+class DataBlockShape;
+class DataBlockShapeDefaultTypeInternal;
+extern DataBlockShapeDefaultTypeInternal _DataBlockShape_default_instance_;
 class DistributeGeneratorParameter;
 class DistributeGeneratorParameterDefaultTypeInternal;
 extern DistributeGeneratorParameterDefaultTypeInternal _DistributeGeneratorParameter_default_instance_;
@@ -63,6 +69,8 @@ class testDefaultTypeInternal;
 extern testDefaultTypeInternal _test_default_instance_;
 }  // namespace bsy
 PROTOBUF_NAMESPACE_OPEN
+template<> ::bsy::DataBlockProto* Arena::CreateMaybeMessage<::bsy::DataBlockProto>(Arena*);
+template<> ::bsy::DataBlockShape* Arena::CreateMaybeMessage<::bsy::DataBlockShape>(Arena*);
 template<> ::bsy::DistributeGeneratorParameter* Arena::CreateMaybeMessage<::bsy::DistributeGeneratorParameter>(Arena*);
 template<> ::bsy::test* Arena::CreateMaybeMessage<::bsy::test>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -219,6 +227,418 @@ class test PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class DataBlockShape PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bsy.DataBlockShape) */ {
+ public:
+  inline DataBlockShape() : DataBlockShape(nullptr) {};
+  virtual ~DataBlockShape();
+
+  DataBlockShape(const DataBlockShape& from);
+  DataBlockShape(DataBlockShape&& from) noexcept
+    : DataBlockShape() {
+    *this = ::std::move(from);
+  }
+
+  inline DataBlockShape& operator=(const DataBlockShape& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DataBlockShape& operator=(DataBlockShape&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DataBlockShape& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DataBlockShape* internal_default_instance() {
+    return reinterpret_cast<const DataBlockShape*>(
+               &_DataBlockShape_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(DataBlockShape& a, DataBlockShape& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DataBlockShape* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DataBlockShape* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DataBlockShape* New() const final {
+    return CreateMaybeMessage<DataBlockShape>(nullptr);
+  }
+
+  DataBlockShape* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DataBlockShape>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DataBlockShape& from);
+  void MergeFrom(const DataBlockShape& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DataBlockShape* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bsy.DataBlockShape";
+  }
+  protected:
+  explicit DataBlockShape(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bsy_2eproto);
+    return ::descriptor_table_bsy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDimFieldNumber = 1,
+  };
+  // repeated int64 dim = 1 [packed = true];
+  int dim_size() const;
+  private:
+  int _internal_dim_size() const;
+  public:
+  void clear_dim();
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_dim(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
+      _internal_dim() const;
+  void _internal_add_dim(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
+      _internal_mutable_dim();
+  public:
+  ::PROTOBUF_NAMESPACE_ID::int64 dim(int index) const;
+  void set_dim(int index, ::PROTOBUF_NAMESPACE_ID::int64 value);
+  void add_dim(::PROTOBUF_NAMESPACE_ID::int64 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
+      dim() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
+      mutable_dim();
+
+  // @@protoc_insertion_point(class_scope:bsy.DataBlockShape)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 > dim_;
+  mutable std::atomic<int> _dim_cached_byte_size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bsy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DataBlockProto PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bsy.DataBlockProto) */ {
+ public:
+  inline DataBlockProto() : DataBlockProto(nullptr) {};
+  virtual ~DataBlockProto();
+
+  DataBlockProto(const DataBlockProto& from);
+  DataBlockProto(DataBlockProto&& from) noexcept
+    : DataBlockProto() {
+    *this = ::std::move(from);
+  }
+
+  inline DataBlockProto& operator=(const DataBlockProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DataBlockProto& operator=(DataBlockProto&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DataBlockProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DataBlockProto* internal_default_instance() {
+    return reinterpret_cast<const DataBlockProto*>(
+               &_DataBlockProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(DataBlockProto& a, DataBlockProto& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DataBlockProto* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DataBlockProto* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DataBlockProto* New() const final {
+    return CreateMaybeMessage<DataBlockProto>(nullptr);
+  }
+
+  DataBlockProto* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DataBlockProto>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DataBlockProto& from);
+  void MergeFrom(const DataBlockProto& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DataBlockProto* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bsy.DataBlockProto";
+  }
+  protected:
+  explicit DataBlockProto(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bsy_2eproto);
+    return ::descriptor_table_bsy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 2,
+    kDiffFieldNumber = 3,
+    kDoubleDataFieldNumber = 4,
+    kDoubleDiffFieldNumber = 5,
+    kShapeFieldNumber = 1,
+  };
+  // repeated float data = 2 [packed = true];
+  int data_size() const;
+  private:
+  int _internal_data_size() const;
+  public:
+  void clear_data();
+  private:
+  float _internal_data(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_data() const;
+  void _internal_add_data(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_data();
+  public:
+  float data(int index) const;
+  void set_data(int index, float value);
+  void add_data(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      data() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_data();
+
+  // repeated float diff = 3 [packed = true];
+  int diff_size() const;
+  private:
+  int _internal_diff_size() const;
+  public:
+  void clear_diff();
+  private:
+  float _internal_diff(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_diff() const;
+  void _internal_add_diff(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_diff();
+  public:
+  float diff(int index) const;
+  void set_diff(int index, float value);
+  void add_diff(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      diff() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_diff();
+
+  // repeated double double_data = 4 [packed = true];
+  int double_data_size() const;
+  private:
+  int _internal_double_data_size() const;
+  public:
+  void clear_double_data();
+  private:
+  double _internal_double_data(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      _internal_double_data() const;
+  void _internal_add_double_data(double value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      _internal_mutable_double_data();
+  public:
+  double double_data(int index) const;
+  void set_double_data(int index, double value);
+  void add_double_data(double value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      double_data() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      mutable_double_data();
+
+  // repeated double double_diff = 5 [packed = true];
+  int double_diff_size() const;
+  private:
+  int _internal_double_diff_size() const;
+  public:
+  void clear_double_diff();
+  private:
+  double _internal_double_diff(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      _internal_double_diff() const;
+  void _internal_add_double_diff(double value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      _internal_mutable_double_diff();
+  public:
+  double double_diff(int index) const;
+  void set_double_diff(int index, double value);
+  void add_double_diff(double value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      double_diff() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      mutable_double_diff();
+
+  // optional .bsy.DataBlockShape shape = 1;
+  bool has_shape() const;
+  private:
+  bool _internal_has_shape() const;
+  public:
+  void clear_shape();
+  const ::bsy::DataBlockShape& shape() const;
+  ::bsy::DataBlockShape* release_shape();
+  ::bsy::DataBlockShape* mutable_shape();
+  void set_allocated_shape(::bsy::DataBlockShape* shape);
+  private:
+  const ::bsy::DataBlockShape& _internal_shape() const;
+  ::bsy::DataBlockShape* _internal_mutable_shape();
+  public:
+  void unsafe_arena_set_allocated_shape(
+      ::bsy::DataBlockShape* shape);
+  ::bsy::DataBlockShape* unsafe_arena_release_shape();
+
+  // @@protoc_insertion_point(class_scope:bsy.DataBlockProto)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > data_;
+  mutable std::atomic<int> _data_cached_byte_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > diff_;
+  mutable std::atomic<int> _diff_cached_byte_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double > double_data_;
+  mutable std::atomic<int> _double_data_cached_byte_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double > double_diff_;
+  mutable std::atomic<int> _double_diff_cached_byte_size_;
+  ::bsy::DataBlockShape* shape_;
+  friend struct ::TableStruct_bsy_2eproto;
+};
+// -------------------------------------------------------------------
+
 class DistributeGeneratorParameter PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bsy.DistributeGeneratorParameter) */ {
  public:
@@ -268,7 +688,7 @@ class DistributeGeneratorParameter PROTOBUF_FINAL :
                &_DistributeGeneratorParameter_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(DistributeGeneratorParameter& a, DistributeGeneratorParameter& b) {
     a.Swap(&b);
@@ -341,7 +761,6 @@ class DistributeGeneratorParameter PROTOBUF_FINAL :
   enum : int {
     kTypeFieldNumber = 1,
     kConstantFieldNumber = 2,
-    kMinFieldNumber = 3,
     kMeanFieldNumber = 5,
     kSparseFieldNumber = 7,
     kMaxFieldNumber = 4,
@@ -387,19 +806,6 @@ class DistributeGeneratorParameter PROTOBUF_FINAL :
   private:
   float _internal_constant() const;
   void _internal_set_constant(float value);
-  public:
-
-  // optional float min = 3 [default = 0];
-  bool has_min() const;
-  private:
-  bool _internal_has_min() const;
-  public:
-  void clear_min();
-  float min() const;
-  void set_min(float value);
-  private:
-  float _internal_min() const;
-  void _internal_set_min(float value);
   public:
 
   // optional float mean = 5 [default = 0];
@@ -468,7 +874,6 @@ class DistributeGeneratorParameter PROTOBUF_FINAL :
   private:
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
   float constant_;
-  float min_;
   float mean_;
   ::PROTOBUF_NAMESPACE_ID::int32 sparse_;
   float max_;
@@ -512,6 +917,330 @@ inline void test::_internal_set_num(::PROTOBUF_NAMESPACE_ID::int32 value) {
 inline void test::set_num(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_num(value);
   // @@protoc_insertion_point(field_set:bsy.test.num)
+}
+
+// -------------------------------------------------------------------
+
+// DataBlockShape
+
+// repeated int64 dim = 1 [packed = true];
+inline int DataBlockShape::_internal_dim_size() const {
+  return dim_.size();
+}
+inline int DataBlockShape::dim_size() const {
+  return _internal_dim_size();
+}
+inline void DataBlockShape::clear_dim() {
+  dim_.Clear();
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 DataBlockShape::_internal_dim(int index) const {
+  return dim_.Get(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 DataBlockShape::dim(int index) const {
+  // @@protoc_insertion_point(field_get:bsy.DataBlockShape.dim)
+  return _internal_dim(index);
+}
+inline void DataBlockShape::set_dim(int index, ::PROTOBUF_NAMESPACE_ID::int64 value) {
+  dim_.Set(index, value);
+  // @@protoc_insertion_point(field_set:bsy.DataBlockShape.dim)
+}
+inline void DataBlockShape::_internal_add_dim(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  dim_.Add(value);
+}
+inline void DataBlockShape::add_dim(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_add_dim(value);
+  // @@protoc_insertion_point(field_add:bsy.DataBlockShape.dim)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
+DataBlockShape::_internal_dim() const {
+  return dim_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
+DataBlockShape::dim() const {
+  // @@protoc_insertion_point(field_list:bsy.DataBlockShape.dim)
+  return _internal_dim();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
+DataBlockShape::_internal_mutable_dim() {
+  return &dim_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
+DataBlockShape::mutable_dim() {
+  // @@protoc_insertion_point(field_mutable_list:bsy.DataBlockShape.dim)
+  return _internal_mutable_dim();
+}
+
+// -------------------------------------------------------------------
+
+// DataBlockProto
+
+// optional .bsy.DataBlockShape shape = 1;
+inline bool DataBlockProto::_internal_has_shape() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || shape_ != nullptr);
+  return value;
+}
+inline bool DataBlockProto::has_shape() const {
+  return _internal_has_shape();
+}
+inline void DataBlockProto::clear_shape() {
+  if (shape_ != nullptr) shape_->Clear();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const ::bsy::DataBlockShape& DataBlockProto::_internal_shape() const {
+  const ::bsy::DataBlockShape* p = shape_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::bsy::DataBlockShape*>(
+      &::bsy::_DataBlockShape_default_instance_);
+}
+inline const ::bsy::DataBlockShape& DataBlockProto::shape() const {
+  // @@protoc_insertion_point(field_get:bsy.DataBlockProto.shape)
+  return _internal_shape();
+}
+inline void DataBlockProto::unsafe_arena_set_allocated_shape(
+    ::bsy::DataBlockShape* shape) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(shape_);
+  }
+  shape_ = shape;
+  if (shape) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bsy.DataBlockProto.shape)
+}
+inline ::bsy::DataBlockShape* DataBlockProto::release_shape() {
+  auto temp = unsafe_arena_release_shape();
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::bsy::DataBlockShape* DataBlockProto::unsafe_arena_release_shape() {
+  // @@protoc_insertion_point(field_release:bsy.DataBlockProto.shape)
+  _has_bits_[0] &= ~0x00000001u;
+  ::bsy::DataBlockShape* temp = shape_;
+  shape_ = nullptr;
+  return temp;
+}
+inline ::bsy::DataBlockShape* DataBlockProto::_internal_mutable_shape() {
+  _has_bits_[0] |= 0x00000001u;
+  if (shape_ == nullptr) {
+    auto* p = CreateMaybeMessage<::bsy::DataBlockShape>(GetArena());
+    shape_ = p;
+  }
+  return shape_;
+}
+inline ::bsy::DataBlockShape* DataBlockProto::mutable_shape() {
+  // @@protoc_insertion_point(field_mutable:bsy.DataBlockProto.shape)
+  return _internal_mutable_shape();
+}
+inline void DataBlockProto::set_allocated_shape(::bsy::DataBlockShape* shape) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete shape_;
+  }
+  if (shape) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(shape);
+    if (message_arena != submessage_arena) {
+      shape = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, shape, submessage_arena);
+    }
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  shape_ = shape;
+  // @@protoc_insertion_point(field_set_allocated:bsy.DataBlockProto.shape)
+}
+
+// repeated float data = 2 [packed = true];
+inline int DataBlockProto::_internal_data_size() const {
+  return data_.size();
+}
+inline int DataBlockProto::data_size() const {
+  return _internal_data_size();
+}
+inline void DataBlockProto::clear_data() {
+  data_.Clear();
+}
+inline float DataBlockProto::_internal_data(int index) const {
+  return data_.Get(index);
+}
+inline float DataBlockProto::data(int index) const {
+  // @@protoc_insertion_point(field_get:bsy.DataBlockProto.data)
+  return _internal_data(index);
+}
+inline void DataBlockProto::set_data(int index, float value) {
+  data_.Set(index, value);
+  // @@protoc_insertion_point(field_set:bsy.DataBlockProto.data)
+}
+inline void DataBlockProto::_internal_add_data(float value) {
+  data_.Add(value);
+}
+inline void DataBlockProto::add_data(float value) {
+  _internal_add_data(value);
+  // @@protoc_insertion_point(field_add:bsy.DataBlockProto.data)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+DataBlockProto::_internal_data() const {
+  return data_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+DataBlockProto::data() const {
+  // @@protoc_insertion_point(field_list:bsy.DataBlockProto.data)
+  return _internal_data();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+DataBlockProto::_internal_mutable_data() {
+  return &data_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+DataBlockProto::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_list:bsy.DataBlockProto.data)
+  return _internal_mutable_data();
+}
+
+// repeated float diff = 3 [packed = true];
+inline int DataBlockProto::_internal_diff_size() const {
+  return diff_.size();
+}
+inline int DataBlockProto::diff_size() const {
+  return _internal_diff_size();
+}
+inline void DataBlockProto::clear_diff() {
+  diff_.Clear();
+}
+inline float DataBlockProto::_internal_diff(int index) const {
+  return diff_.Get(index);
+}
+inline float DataBlockProto::diff(int index) const {
+  // @@protoc_insertion_point(field_get:bsy.DataBlockProto.diff)
+  return _internal_diff(index);
+}
+inline void DataBlockProto::set_diff(int index, float value) {
+  diff_.Set(index, value);
+  // @@protoc_insertion_point(field_set:bsy.DataBlockProto.diff)
+}
+inline void DataBlockProto::_internal_add_diff(float value) {
+  diff_.Add(value);
+}
+inline void DataBlockProto::add_diff(float value) {
+  _internal_add_diff(value);
+  // @@protoc_insertion_point(field_add:bsy.DataBlockProto.diff)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+DataBlockProto::_internal_diff() const {
+  return diff_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+DataBlockProto::diff() const {
+  // @@protoc_insertion_point(field_list:bsy.DataBlockProto.diff)
+  return _internal_diff();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+DataBlockProto::_internal_mutable_diff() {
+  return &diff_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+DataBlockProto::mutable_diff() {
+  // @@protoc_insertion_point(field_mutable_list:bsy.DataBlockProto.diff)
+  return _internal_mutable_diff();
+}
+
+// repeated double double_data = 4 [packed = true];
+inline int DataBlockProto::_internal_double_data_size() const {
+  return double_data_.size();
+}
+inline int DataBlockProto::double_data_size() const {
+  return _internal_double_data_size();
+}
+inline void DataBlockProto::clear_double_data() {
+  double_data_.Clear();
+}
+inline double DataBlockProto::_internal_double_data(int index) const {
+  return double_data_.Get(index);
+}
+inline double DataBlockProto::double_data(int index) const {
+  // @@protoc_insertion_point(field_get:bsy.DataBlockProto.double_data)
+  return _internal_double_data(index);
+}
+inline void DataBlockProto::set_double_data(int index, double value) {
+  double_data_.Set(index, value);
+  // @@protoc_insertion_point(field_set:bsy.DataBlockProto.double_data)
+}
+inline void DataBlockProto::_internal_add_double_data(double value) {
+  double_data_.Add(value);
+}
+inline void DataBlockProto::add_double_data(double value) {
+  _internal_add_double_data(value);
+  // @@protoc_insertion_point(field_add:bsy.DataBlockProto.double_data)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+DataBlockProto::_internal_double_data() const {
+  return double_data_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+DataBlockProto::double_data() const {
+  // @@protoc_insertion_point(field_list:bsy.DataBlockProto.double_data)
+  return _internal_double_data();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+DataBlockProto::_internal_mutable_double_data() {
+  return &double_data_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+DataBlockProto::mutable_double_data() {
+  // @@protoc_insertion_point(field_mutable_list:bsy.DataBlockProto.double_data)
+  return _internal_mutable_double_data();
+}
+
+// repeated double double_diff = 5 [packed = true];
+inline int DataBlockProto::_internal_double_diff_size() const {
+  return double_diff_.size();
+}
+inline int DataBlockProto::double_diff_size() const {
+  return _internal_double_diff_size();
+}
+inline void DataBlockProto::clear_double_diff() {
+  double_diff_.Clear();
+}
+inline double DataBlockProto::_internal_double_diff(int index) const {
+  return double_diff_.Get(index);
+}
+inline double DataBlockProto::double_diff(int index) const {
+  // @@protoc_insertion_point(field_get:bsy.DataBlockProto.double_diff)
+  return _internal_double_diff(index);
+}
+inline void DataBlockProto::set_double_diff(int index, double value) {
+  double_diff_.Set(index, value);
+  // @@protoc_insertion_point(field_set:bsy.DataBlockProto.double_diff)
+}
+inline void DataBlockProto::_internal_add_double_diff(double value) {
+  double_diff_.Add(value);
+}
+inline void DataBlockProto::add_double_diff(double value) {
+  _internal_add_double_diff(value);
+  // @@protoc_insertion_point(field_add:bsy.DataBlockProto.double_diff)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+DataBlockProto::_internal_double_diff() const {
+  return double_diff_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+DataBlockProto::double_diff() const {
+  // @@protoc_insertion_point(field_list:bsy.DataBlockProto.double_diff)
+  return _internal_double_diff();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+DataBlockProto::_internal_mutable_double_diff() {
+  return &double_diff_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+DataBlockProto::mutable_double_diff() {
+  // @@protoc_insertion_point(field_mutable_list:bsy.DataBlockProto.double_diff)
+  return _internal_mutable_double_diff();
 }
 
 // -------------------------------------------------------------------
@@ -639,37 +1368,9 @@ inline void DistributeGeneratorParameter::set_constant(float value) {
   // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.constant)
 }
 
-// optional float min = 3 [default = 0];
-inline bool DistributeGeneratorParameter::_internal_has_min() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool DistributeGeneratorParameter::has_min() const {
-  return _internal_has_min();
-}
-inline void DistributeGeneratorParameter::clear_min() {
-  min_ = 0;
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline float DistributeGeneratorParameter::_internal_min() const {
-  return min_;
-}
-inline float DistributeGeneratorParameter::min() const {
-  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.min)
-  return _internal_min();
-}
-inline void DistributeGeneratorParameter::_internal_set_min(float value) {
-  _has_bits_[0] |= 0x00000004u;
-  min_ = value;
-}
-inline void DistributeGeneratorParameter::set_min(float value) {
-  _internal_set_min(value);
-  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.min)
-}
-
 // optional float max = 4 [default = 1];
 inline bool DistributeGeneratorParameter::_internal_has_max() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_max() const {
@@ -677,7 +1378,7 @@ inline bool DistributeGeneratorParameter::has_max() const {
 }
 inline void DistributeGeneratorParameter::clear_max() {
   max_ = 1;
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline float DistributeGeneratorParameter::_internal_max() const {
   return max_;
@@ -687,7 +1388,7 @@ inline float DistributeGeneratorParameter::max() const {
   return _internal_max();
 }
 inline void DistributeGeneratorParameter::_internal_set_max(float value) {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
   max_ = value;
 }
 inline void DistributeGeneratorParameter::set_max(float value) {
@@ -697,7 +1398,7 @@ inline void DistributeGeneratorParameter::set_max(float value) {
 
 // optional float mean = 5 [default = 0];
 inline bool DistributeGeneratorParameter::_internal_has_mean() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_mean() const {
@@ -705,7 +1406,7 @@ inline bool DistributeGeneratorParameter::has_mean() const {
 }
 inline void DistributeGeneratorParameter::clear_mean() {
   mean_ = 0;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline float DistributeGeneratorParameter::_internal_mean() const {
   return mean_;
@@ -715,7 +1416,7 @@ inline float DistributeGeneratorParameter::mean() const {
   return _internal_mean();
 }
 inline void DistributeGeneratorParameter::_internal_set_mean(float value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000004u;
   mean_ = value;
 }
 inline void DistributeGeneratorParameter::set_mean(float value) {
@@ -725,7 +1426,7 @@ inline void DistributeGeneratorParameter::set_mean(float value) {
 
 // optional float std = 6 [default = 1];
 inline bool DistributeGeneratorParameter::_internal_has_std() const {
-  bool value = (_has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_std() const {
@@ -733,7 +1434,7 @@ inline bool DistributeGeneratorParameter::has_std() const {
 }
 inline void DistributeGeneratorParameter::clear_std() {
   std_ = 1;
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline float DistributeGeneratorParameter::_internal_std() const {
   return std_;
@@ -743,7 +1444,7 @@ inline float DistributeGeneratorParameter::std() const {
   return _internal_std();
 }
 inline void DistributeGeneratorParameter::_internal_set_std(float value) {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
   std_ = value;
 }
 inline void DistributeGeneratorParameter::set_std(float value) {
@@ -753,7 +1454,7 @@ inline void DistributeGeneratorParameter::set_std(float value) {
 
 // optional int32 sparse = 7 [default = -1];
 inline bool DistributeGeneratorParameter::_internal_has_sparse() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_sparse() const {
@@ -761,7 +1462,7 @@ inline bool DistributeGeneratorParameter::has_sparse() const {
 }
 inline void DistributeGeneratorParameter::clear_sparse() {
   sparse_ = -1;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 DistributeGeneratorParameter::_internal_sparse() const {
   return sparse_;
@@ -771,7 +1472,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 DistributeGeneratorParameter::sparse() con
   return _internal_sparse();
 }
 inline void DistributeGeneratorParameter::_internal_set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
   sparse_ = value;
 }
 inline void DistributeGeneratorParameter::set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -782,6 +1483,10 @@ inline void DistributeGeneratorParameter::set_sparse(::PROTOBUF_NAMESPACE_ID::in
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 
