@@ -18,7 +18,7 @@ void partical_specialization<double>(double value)
 }
 
 template<>
-void caffe_cpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
+void bsy_cpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
     const CBLAS_TRANSPOSE TransB, const int M, const int N, const int K,
     const float alpha, const float* A, const float* B, const float beta,
     float* C) {
@@ -29,7 +29,7 @@ void caffe_cpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
 }
 
 template<>
-void caffe_cpu_gemm<double>(const CBLAS_TRANSPOSE TransA,
+void bsy_cpu_gemm<double>(const CBLAS_TRANSPOSE TransA,
     const CBLAS_TRANSPOSE TransB, const int M, const int N, const int K,
     const double alpha, const double* A, const double* B, const double beta,
     double* C) {
@@ -55,19 +55,6 @@ void bsy_cpu_gemv<double>(const CBLAS_TRANSPOSE TransA, const int M,
   cblas_dgemv(CblasRowMajor, TransA, M, N, alpha, A, N, x, 1, beta, y, 1);
 }
 
-template <>
-void bsy_cpu_gemv<float>(const CBLAS_TRANSPOSE TransA, const int M,
-    const int N, const float alpha, const float* A, const float* x,
-    const float beta, float* y) {
-  cblas_sgemv(CblasRowMajor, TransA, M, N, alpha, A, N, x, 1, beta, y, 1);
-}
-
-template <>
-void bsy_cpu_gemv<double>(const CBLAS_TRANSPOSE TransA, const int M,
-    const int N, const double alpha, const double* A, const double* x,
-    const double beta, double* y) {
-  cblas_dgemv(CblasRowMajor, TransA, M, N, alpha, A, N, x, 1, beta, y, 1);
-}
 
 
 template <>
@@ -77,6 +64,20 @@ void bsy_cpu_vectors_simple_add<float>(const int N, const float alpha, const flo
 template <>
 void bsy_cpu_vectors_simple_add<double>(const int N, const double alpha, const double* X,
     double* Y) { cblas_daxpy(N, alpha, X, 1, Y, 1); }
+
+
+inline void cblas_saxpby(const int N, const float alpha, const float* X,
+                         const int incX, const float beta, float* Y,
+                         const int incY) {
+  cblas_sscal(N, beta, Y, incY);
+  cblas_saxpy(N, alpha, X, incX, Y, incY);
+}
+inline void cblas_daxpby(const int N, const double alpha, const double* X,
+                         const int incX, const double beta, double* Y,
+                         const int incY) {
+  cblas_dscal(N, beta, Y, incY);
+  cblas_daxpy(N, alpha, X, incX, Y, incY);
+}
 
 
 template <>
@@ -136,18 +137,19 @@ void bsy_scal<double>(const int N, const double alpha, double *X) {
 template <typename Dtype>
 void bsy_copy(const int N, const Dtype* X, Dtype* Y) {
   if (X != Y) {
-    if (HAVE_CUDA) {
+#ifdef HAVE_CUDA
 #ifndef CPU_ONLY
       // NOLINT_NEXT_LINE(caffe/alt_fn)
       CUDA_CHECK(cudaMemcpy(Y, X, sizeof(Dtype) * N, cudaMemcpyDefault));
 #else
       NO_GPU;
 #endif
+#endif
     } else {
       memcpy(Y, X, sizeof(Dtype) * N);  // NOLINT(caffe/alt_fn)
     }
-  }
 }
+
 
 template void bsy_copy<int>(const int N, const int* X, int* Y);
 template void bsy_copy<unsigned int>(const int N, const unsigned int* X,

@@ -19,7 +19,29 @@ class testDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<test> _instance;
 } _test_default_instance_;
+class DistributeGeneratorParameterDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DistributeGeneratorParameter> _instance;
+} _DistributeGeneratorParameter_default_instance_;
 }  // namespace bsy
+static void InitDefaultsscc_info_DistributeGeneratorParameter_bsy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  ::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.DefaultConstruct();
+  *::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get_mutable() = std::string("constant", 8);
+  ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyString(
+      ::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get_mutable());
+  {
+    void* ptr = &::bsy::_DistributeGeneratorParameter_default_instance_;
+    new (ptr) ::bsy::DistributeGeneratorParameter();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bsy::DistributeGeneratorParameter::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DistributeGeneratorParameter_bsy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DistributeGeneratorParameter_bsy_2eproto}, {}};
+
 static void InitDefaultsscc_info_test_bsy_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -34,7 +56,7 @@ static void InitDefaultsscc_info_test_bsy_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_test_bsy_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_test_bsy_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_bsy_2eproto[1];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_bsy_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_bsy_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_bsy_2eproto = nullptr;
 
@@ -46,29 +68,55 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_bsy_2eproto::offsets[] PROTOBU
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::bsy::test, num_),
   0,
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, type_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, constant_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, min_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, max_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, mean_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, std_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, sparse_),
+  0,
+  1,
+  2,
+  5,
+  3,
+  6,
+  4,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 6, sizeof(::bsy::test)},
+  { 7, 19, sizeof(::bsy::DistributeGeneratorParameter)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bsy::_test_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bsy::_DistributeGeneratorParameter_default_instance_),
 };
 
 const char descriptor_table_protodef_bsy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\tbsy.proto\022\003bsy\"\023\n\004test\022\013\n\003num\030\001 \001(\005"
+  "\n\tbsy.proto\022\003bsy\"\023\n\004test\022\013\n\003num\030\001 \001(\005\"\240\001"
+  "\n\034DistributeGeneratorParameter\022\026\n\004type\030\001"
+  " \001(\t:\010constant\022\023\n\010constant\030\002 \001(\002:\0010\022\016\n\003m"
+  "in\030\003 \001(\002:\0010\022\016\n\003max\030\004 \001(\002:\0011\022\017\n\004mean\030\005 \001("
+  "\002:\0010\022\016\n\003std\030\006 \001(\002:\0011\022\022\n\006sparse\030\007 \001(\005:\002-1"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_bsy_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bsy_2eproto_sccs[1] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bsy_2eproto_sccs[2] = {
+  &scc_info_DistributeGeneratorParameter_bsy_2eproto.base,
   &scc_info_test_bsy_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_bsy_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bsy_2eproto = {
-  false, false, descriptor_table_protodef_bsy_2eproto, "bsy.proto", 37,
-  &descriptor_table_bsy_2eproto_once, descriptor_table_bsy_2eproto_sccs, descriptor_table_bsy_2eproto_deps, 1, 0,
+  false, false, descriptor_table_protodef_bsy_2eproto, "bsy.proto", 200,
+  &descriptor_table_bsy_2eproto_once, descriptor_table_bsy_2eproto_sccs, descriptor_table_bsy_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_bsy_2eproto::offsets,
-  file_level_metadata_bsy_2eproto, 1, file_level_enum_descriptors_bsy_2eproto, file_level_service_descriptors_bsy_2eproto,
+  file_level_metadata_bsy_2eproto, 2, file_level_enum_descriptors_bsy_2eproto, file_level_service_descriptors_bsy_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -284,11 +332,424 @@ void test::InternalSwap(test* other) {
 }
 
 
+// ===================================================================
+
+void DistributeGeneratorParameter::InitAsDefaultInstance() {
+}
+class DistributeGeneratorParameter::_Internal {
+ public:
+  using HasBits = decltype(std::declval<DistributeGeneratorParameter>()._has_bits_);
+  static void set_has_type(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_constant(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_min(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_max(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
+  static void set_has_mean(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_std(HasBits* has_bits) {
+    (*has_bits)[0] |= 64u;
+  }
+  static void set_has_sparse(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+};
+
+::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_;
+DistributeGeneratorParameter::DistributeGeneratorParameter(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bsy.DistributeGeneratorParameter)
+}
+DistributeGeneratorParameter::DistributeGeneratorParameter(const DistributeGeneratorParameter& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  type_.UnsafeSetDefault(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get());
+  if (from._internal_has_type()) {
+    type_.Set(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), from._internal_type(),
+      GetArena());
+  }
+  ::memcpy(&constant_, &from.constant_,
+    static_cast<size_t>(reinterpret_cast<char*>(&std_) -
+    reinterpret_cast<char*>(&constant_)) + sizeof(std_));
+  // @@protoc_insertion_point(copy_constructor:bsy.DistributeGeneratorParameter)
+}
+
+void DistributeGeneratorParameter::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DistributeGeneratorParameter_bsy_2eproto.base);
+  type_.UnsafeSetDefault(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get());
+  ::memset(&constant_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mean_) -
+      reinterpret_cast<char*>(&constant_)) + sizeof(mean_));
+  sparse_ = -1;
+  max_ = 1;
+  std_ = 1;
+}
+
+DistributeGeneratorParameter::~DistributeGeneratorParameter() {
+  // @@protoc_insertion_point(destructor:bsy.DistributeGeneratorParameter)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void DistributeGeneratorParameter::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  type_.DestroyNoArena(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get());
+}
+
+void DistributeGeneratorParameter::ArenaDtor(void* object) {
+  DistributeGeneratorParameter* _this = reinterpret_cast< DistributeGeneratorParameter* >(object);
+  (void)_this;
+}
+void DistributeGeneratorParameter::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DistributeGeneratorParameter::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DistributeGeneratorParameter& DistributeGeneratorParameter::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DistributeGeneratorParameter_bsy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DistributeGeneratorParameter::Clear() {
+// @@protoc_insertion_point(message_clear_start:bsy.DistributeGeneratorParameter)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    type_.ClearToDefault(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), GetArena());
+  }
+  if (cached_has_bits & 0x0000007eu) {
+    ::memset(&constant_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&mean_) -
+        reinterpret_cast<char*>(&constant_)) + sizeof(mean_));
+    sparse_ = -1;
+    max_ = 1;
+    std_ = 1;
+  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DistributeGeneratorParameter::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // optional string type = 1 [default = "constant"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_type();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          #ifndef NDEBUG
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bsy.DistributeGeneratorParameter.type");
+          #endif  // !NDEBUG
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // optional float constant = 2 [default = 0];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          _Internal::set_has_constant(&has_bits);
+          constant_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // optional float min = 3 [default = 0];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          _Internal::set_has_min(&has_bits);
+          min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // optional float max = 4 [default = 1];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          _Internal::set_has_max(&has_bits);
+          max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // optional float mean = 5 [default = 0];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          _Internal::set_has_mean(&has_bits);
+          mean_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // optional float std = 6 [default = 1];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          _Internal::set_has_std(&has_bits);
+          std_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // optional int32 sparse = 7 [default = -1];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          _Internal::set_has_sparse(&has_bits);
+          sparse_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  _has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DistributeGeneratorParameter::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bsy.DistributeGeneratorParameter)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional string type = 1 [default = "constant"];
+  if (cached_has_bits & 0x00000001u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_type().data(), static_cast<int>(this->_internal_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "bsy.DistributeGeneratorParameter.type");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_type(), target);
+  }
+
+  // optional float constant = 2 [default = 0];
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_constant(), target);
+  }
+
+  // optional float min = 3 [default = 0];
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_min(), target);
+  }
+
+  // optional float max = 4 [default = 1];
+  if (cached_has_bits & 0x00000020u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_max(), target);
+  }
+
+  // optional float mean = 5 [default = 0];
+  if (cached_has_bits & 0x00000008u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_mean(), target);
+  }
+
+  // optional float std = 6 [default = 1];
+  if (cached_has_bits & 0x00000040u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_std(), target);
+  }
+
+  // optional int32 sparse = 7 [default = -1];
+  if (cached_has_bits & 0x00000010u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_sparse(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bsy.DistributeGeneratorParameter)
+  return target;
+}
+
+size_t DistributeGeneratorParameter::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bsy.DistributeGeneratorParameter)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x0000007fu) {
+    // optional string type = 1 [default = "constant"];
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_type());
+    }
+
+    // optional float constant = 2 [default = 0];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float min = 3 [default = 0];
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float mean = 5 [default = 0];
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 1 + 4;
+    }
+
+    // optional int32 sparse = 7 [default = -1];
+    if (cached_has_bits & 0x00000010u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+          this->_internal_sparse());
+    }
+
+    // optional float max = 4 [default = 1];
+    if (cached_has_bits & 0x00000020u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float std = 6 [default = 1];
+    if (cached_has_bits & 0x00000040u) {
+      total_size += 1 + 4;
+    }
+
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DistributeGeneratorParameter::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bsy.DistributeGeneratorParameter)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DistributeGeneratorParameter* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DistributeGeneratorParameter>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bsy.DistributeGeneratorParameter)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bsy.DistributeGeneratorParameter)
+    MergeFrom(*source);
+  }
+}
+
+void DistributeGeneratorParameter::MergeFrom(const DistributeGeneratorParameter& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bsy.DistributeGeneratorParameter)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 0x0000007fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _internal_set_type(from._internal_type());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      constant_ = from.constant_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      min_ = from.min_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      mean_ = from.mean_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      sparse_ = from.sparse_;
+    }
+    if (cached_has_bits & 0x00000020u) {
+      max_ = from.max_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      std_ = from.std_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+}
+
+void DistributeGeneratorParameter::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bsy.DistributeGeneratorParameter)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DistributeGeneratorParameter::CopyFrom(const DistributeGeneratorParameter& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bsy.DistributeGeneratorParameter)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DistributeGeneratorParameter::IsInitialized() const {
+  return true;
+}
+
+void DistributeGeneratorParameter::InternalSwap(DistributeGeneratorParameter* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  type_.Swap(&other->type_, &::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DistributeGeneratorParameter, mean_)
+      + sizeof(DistributeGeneratorParameter::mean_)
+      - PROTOBUF_FIELD_OFFSET(DistributeGeneratorParameter, constant_)>(
+          reinterpret_cast<char*>(&constant_),
+          reinterpret_cast<char*>(&other->constant_));
+  swap(sparse_, other->sparse_);
+  swap(max_, other->max_);
+  swap(std_, other->std_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DistributeGeneratorParameter::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace bsy
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::bsy::test* Arena::CreateMaybeMessage< ::bsy::test >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bsy::test >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bsy::DistributeGeneratorParameter* Arena::CreateMaybeMessage< ::bsy::DistributeGeneratorParameter >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bsy::DistributeGeneratorParameter >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

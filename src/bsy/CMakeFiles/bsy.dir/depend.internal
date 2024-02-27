@@ -6,4 +6,6 @@ src/bsy/CMakeFiles/bsy.dir/test.cpp.o
 src/bsy/CMakeFiles/bsy.dir/util/math.cpp.o
  /home/liyang/bsy/src/bsy/util/math.cpp
  include/bsy/common.hpp
+ include/bsy/proto/bsy.pb.h
+ include/bsy/util/gpu_relative.hpp
  include/bsy/util/math.hpp

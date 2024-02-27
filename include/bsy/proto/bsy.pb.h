@@ -47,7 +47,7 @@ struct TableStruct_bsy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -55,11 +55,15 @@ struct TableStruct_bsy_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bsy_2eproto;
 namespace bsy {
+class DistributeGeneratorParameter;
+class DistributeGeneratorParameterDefaultTypeInternal;
+extern DistributeGeneratorParameterDefaultTypeInternal _DistributeGeneratorParameter_default_instance_;
 class test;
 class testDefaultTypeInternal;
 extern testDefaultTypeInternal _test_default_instance_;
 }  // namespace bsy
 PROTOBUF_NAMESPACE_OPEN
+template<> ::bsy::DistributeGeneratorParameter* Arena::CreateMaybeMessage<::bsy::DistributeGeneratorParameter>(Arena*);
 template<> ::bsy::test* Arena::CreateMaybeMessage<::bsy::test>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace bsy {
@@ -213,6 +217,264 @@ class test PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::int32 num_;
   friend struct ::TableStruct_bsy_2eproto;
 };
+// -------------------------------------------------------------------
+
+class DistributeGeneratorParameter PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bsy.DistributeGeneratorParameter) */ {
+ public:
+  inline DistributeGeneratorParameter() : DistributeGeneratorParameter(nullptr) {};
+  virtual ~DistributeGeneratorParameter();
+
+  DistributeGeneratorParameter(const DistributeGeneratorParameter& from);
+  DistributeGeneratorParameter(DistributeGeneratorParameter&& from) noexcept
+    : DistributeGeneratorParameter() {
+    *this = ::std::move(from);
+  }
+
+  inline DistributeGeneratorParameter& operator=(const DistributeGeneratorParameter& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DistributeGeneratorParameter& operator=(DistributeGeneratorParameter&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DistributeGeneratorParameter& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DistributeGeneratorParameter* internal_default_instance() {
+    return reinterpret_cast<const DistributeGeneratorParameter*>(
+               &_DistributeGeneratorParameter_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(DistributeGeneratorParameter& a, DistributeGeneratorParameter& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DistributeGeneratorParameter* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DistributeGeneratorParameter* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DistributeGeneratorParameter* New() const final {
+    return CreateMaybeMessage<DistributeGeneratorParameter>(nullptr);
+  }
+
+  DistributeGeneratorParameter* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DistributeGeneratorParameter>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DistributeGeneratorParameter& from);
+  void MergeFrom(const DistributeGeneratorParameter& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DistributeGeneratorParameter* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bsy.DistributeGeneratorParameter";
+  }
+  protected:
+  explicit DistributeGeneratorParameter(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bsy_2eproto);
+    return ::descriptor_table_bsy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTypeFieldNumber = 1,
+    kConstantFieldNumber = 2,
+    kMinFieldNumber = 3,
+    kMeanFieldNumber = 5,
+    kSparseFieldNumber = 7,
+    kMaxFieldNumber = 4,
+    kStdFieldNumber = 6,
+  };
+  // optional string type = 1 [default = "constant"];
+  bool has_type() const;
+  private:
+  bool _internal_has_type() const;
+  public:
+  void clear_type();
+  const std::string& type() const;
+  void set_type(const std::string& value);
+  void set_type(std::string&& value);
+  void set_type(const char* value);
+  void set_type(const char* value, size_t size);
+  std::string* mutable_type();
+  std::string* release_type();
+  void set_allocated_type(std::string* type);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_type();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_type(
+      std::string* type);
+  private:
+  const std::string& _internal_type() const;
+  void _internal_set_type(const std::string& value);
+  std::string* _internal_mutable_type();
+  public:
+
+  // optional float constant = 2 [default = 0];
+  bool has_constant() const;
+  private:
+  bool _internal_has_constant() const;
+  public:
+  void clear_constant();
+  float constant() const;
+  void set_constant(float value);
+  private:
+  float _internal_constant() const;
+  void _internal_set_constant(float value);
+  public:
+
+  // optional float min = 3 [default = 0];
+  bool has_min() const;
+  private:
+  bool _internal_has_min() const;
+  public:
+  void clear_min();
+  float min() const;
+  void set_min(float value);
+  private:
+  float _internal_min() const;
+  void _internal_set_min(float value);
+  public:
+
+  // optional float mean = 5 [default = 0];
+  bool has_mean() const;
+  private:
+  bool _internal_has_mean() const;
+  public:
+  void clear_mean();
+  float mean() const;
+  void set_mean(float value);
+  private:
+  float _internal_mean() const;
+  void _internal_set_mean(float value);
+  public:
+
+  // optional int32 sparse = 7 [default = -1];
+  bool has_sparse() const;
+  private:
+  bool _internal_has_sparse() const;
+  public:
+  void clear_sparse();
+  ::PROTOBUF_NAMESPACE_ID::int32 sparse() const;
+  void set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_sparse() const;
+  void _internal_set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // optional float max = 4 [default = 1];
+  bool has_max() const;
+  private:
+  bool _internal_has_max() const;
+  public:
+  void clear_max();
+  float max() const;
+  void set_max(float value);
+  private:
+  float _internal_max() const;
+  void _internal_set_max(float value);
+  public:
+
+  // optional float std = 6 [default = 1];
+  bool has_std() const;
+  private:
+  bool _internal_has_std() const;
+  public:
+  void clear_std();
+  float std() const;
+  void set_std(float value);
+  private:
+  float _internal_std() const;
+  void _internal_set_std(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bsy.DistributeGeneratorParameter)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  public:
+  static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> _i_give_permission_to_break_this_code_default_type_;
+  private:
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
+  float constant_;
+  float min_;
+  float mean_;
+  ::PROTOBUF_NAMESPACE_ID::int32 sparse_;
+  float max_;
+  float std_;
+  friend struct ::TableStruct_bsy_2eproto;
+};
 // ===================================================================
 
 
@@ -252,9 +514,276 @@ inline void test::set_num(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:bsy.test.num)
 }
 
+// -------------------------------------------------------------------
+
+// DistributeGeneratorParameter
+
+// optional string type = 1 [default = "constant"];
+inline bool DistributeGeneratorParameter::_internal_has_type() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_type() const {
+  return _internal_has_type();
+}
+inline void DistributeGeneratorParameter::clear_type() {
+  type_.ClearToDefault(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), GetArena());
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& DistributeGeneratorParameter::type() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.type)
+  return _internal_type();
+}
+inline void DistributeGeneratorParameter::set_type(const std::string& value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.type)
+}
+inline std::string* DistributeGeneratorParameter::mutable_type() {
+  // @@protoc_insertion_point(field_mutable:bsy.DistributeGeneratorParameter.type)
+  return _internal_mutable_type();
+}
+inline const std::string& DistributeGeneratorParameter::_internal_type() const {
+  return type_.Get();
+}
+inline void DistributeGeneratorParameter::_internal_set_type(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  type_.Set(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), value, GetArena());
+}
+inline void DistributeGeneratorParameter::set_type(std::string&& value) {
+  _has_bits_[0] |= 0x00000001u;
+  type_.Set(
+    &::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bsy.DistributeGeneratorParameter.type)
+}
+inline void DistributeGeneratorParameter::set_type(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _has_bits_[0] |= 0x00000001u;
+  type_.Set(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bsy.DistributeGeneratorParameter.type)
+}
+inline void DistributeGeneratorParameter::set_type(const char* value,
+    size_t size) {
+  _has_bits_[0] |= 0x00000001u;
+  type_.Set(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bsy.DistributeGeneratorParameter.type)
+}
+inline std::string* DistributeGeneratorParameter::_internal_mutable_type() {
+  _has_bits_[0] |= 0x00000001u;
+  return type_.Mutable(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), GetArena());
+}
+inline std::string* DistributeGeneratorParameter::release_type() {
+  // @@protoc_insertion_point(field_release:bsy.DistributeGeneratorParameter.type)
+  if (!_internal_has_type()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return type_.ReleaseNonDefault(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), GetArena());
+}
+inline void DistributeGeneratorParameter::set_allocated_type(std::string* type) {
+  if (type != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  type_.SetAllocated(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), type,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bsy.DistributeGeneratorParameter.type)
+}
+inline std::string* DistributeGeneratorParameter::unsafe_arena_release_type() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bsy.DistributeGeneratorParameter.type)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  _has_bits_[0] &= ~0x00000001u;
+  return type_.UnsafeArenaRelease(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(),
+      GetArena());
+}
+inline void DistributeGeneratorParameter::unsafe_arena_set_allocated_type(
+    std::string* type) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (type != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  type_.UnsafeArenaSetAllocated(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(),
+      type, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bsy.DistributeGeneratorParameter.type)
+}
+
+// optional float constant = 2 [default = 0];
+inline bool DistributeGeneratorParameter::_internal_has_constant() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_constant() const {
+  return _internal_has_constant();
+}
+inline void DistributeGeneratorParameter::clear_constant() {
+  constant_ = 0;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline float DistributeGeneratorParameter::_internal_constant() const {
+  return constant_;
+}
+inline float DistributeGeneratorParameter::constant() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.constant)
+  return _internal_constant();
+}
+inline void DistributeGeneratorParameter::_internal_set_constant(float value) {
+  _has_bits_[0] |= 0x00000002u;
+  constant_ = value;
+}
+inline void DistributeGeneratorParameter::set_constant(float value) {
+  _internal_set_constant(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.constant)
+}
+
+// optional float min = 3 [default = 0];
+inline bool DistributeGeneratorParameter::_internal_has_min() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_min() const {
+  return _internal_has_min();
+}
+inline void DistributeGeneratorParameter::clear_min() {
+  min_ = 0;
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline float DistributeGeneratorParameter::_internal_min() const {
+  return min_;
+}
+inline float DistributeGeneratorParameter::min() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.min)
+  return _internal_min();
+}
+inline void DistributeGeneratorParameter::_internal_set_min(float value) {
+  _has_bits_[0] |= 0x00000004u;
+  min_ = value;
+}
+inline void DistributeGeneratorParameter::set_min(float value) {
+  _internal_set_min(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.min)
+}
+
+// optional float max = 4 [default = 1];
+inline bool DistributeGeneratorParameter::_internal_has_max() const {
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_max() const {
+  return _internal_has_max();
+}
+inline void DistributeGeneratorParameter::clear_max() {
+  max_ = 1;
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline float DistributeGeneratorParameter::_internal_max() const {
+  return max_;
+}
+inline float DistributeGeneratorParameter::max() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.max)
+  return _internal_max();
+}
+inline void DistributeGeneratorParameter::_internal_set_max(float value) {
+  _has_bits_[0] |= 0x00000020u;
+  max_ = value;
+}
+inline void DistributeGeneratorParameter::set_max(float value) {
+  _internal_set_max(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.max)
+}
+
+// optional float mean = 5 [default = 0];
+inline bool DistributeGeneratorParameter::_internal_has_mean() const {
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_mean() const {
+  return _internal_has_mean();
+}
+inline void DistributeGeneratorParameter::clear_mean() {
+  mean_ = 0;
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline float DistributeGeneratorParameter::_internal_mean() const {
+  return mean_;
+}
+inline float DistributeGeneratorParameter::mean() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.mean)
+  return _internal_mean();
+}
+inline void DistributeGeneratorParameter::_internal_set_mean(float value) {
+  _has_bits_[0] |= 0x00000008u;
+  mean_ = value;
+}
+inline void DistributeGeneratorParameter::set_mean(float value) {
+  _internal_set_mean(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.mean)
+}
+
+// optional float std = 6 [default = 1];
+inline bool DistributeGeneratorParameter::_internal_has_std() const {
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_std() const {
+  return _internal_has_std();
+}
+inline void DistributeGeneratorParameter::clear_std() {
+  std_ = 1;
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline float DistributeGeneratorParameter::_internal_std() const {
+  return std_;
+}
+inline float DistributeGeneratorParameter::std() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.std)
+  return _internal_std();
+}
+inline void DistributeGeneratorParameter::_internal_set_std(float value) {
+  _has_bits_[0] |= 0x00000040u;
+  std_ = value;
+}
+inline void DistributeGeneratorParameter::set_std(float value) {
+  _internal_set_std(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.std)
+}
+
+// optional int32 sparse = 7 [default = -1];
+inline bool DistributeGeneratorParameter::_internal_has_sparse() const {
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_sparse() const {
+  return _internal_has_sparse();
+}
+inline void DistributeGeneratorParameter::clear_sparse() {
+  sparse_ = -1;
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DistributeGeneratorParameter::_internal_sparse() const {
+  return sparse_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DistributeGeneratorParameter::sparse() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.sparse)
+  return _internal_sparse();
+}
+inline void DistributeGeneratorParameter::_internal_set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _has_bits_[0] |= 0x00000010u;
+  sparse_ = value;
+}
+inline void DistributeGeneratorParameter::set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_sparse(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.sparse)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

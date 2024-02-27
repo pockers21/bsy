@@ -1,5 +1,7 @@
 #pragma once
 
+#include <gflags/gflags.h>
+#include <glog/logging.h>
 
 #include <climits>
 #include <cmath>
@@ -13,5 +15,6 @@
 #include <vector>
 
 #include "bsy/util/gpu_relative.hpp"
+#include "bsy/proto/bsy.pb.h"
 using namespace std;
 

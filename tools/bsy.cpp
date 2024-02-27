@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "bsy/common.hpp"
+#include "bsy/distribute_generator.hpp"
 
 #include "bsy/util/math.hpp"
 
@@ -16,6 +17,8 @@ DEFINE_bool(verbose, true, "Enable verbose output");
 
 
 using namespace std;
+
+using namespace bsy;
 
 void init_third_party(int *argc, char *** argv)
 {
@@ -25,6 +28,10 @@ void init_third_party(int *argc, char *** argv)
     //init glog
     ::google::InitGoogleLogging(*(argv)[0]);
 
+    // set log level
+    google::SetStderrLogging(google::GLOG_INFO);
+
+
 }
 int main(int argc, char** argv)
 {
@@ -33,20 +40,20 @@ int main(int argc, char** argv)
  init_third_party(&argc, &argv);
 
 
-
-  // 使用命令行参数
-  if (FLAGS_verbose) {
-    std::cout << "Verbose mode is enabled." << std::endl;
-  } else {
-    std::cout << "Verbose mode is disabled." << std::endl;
-  }
-
-
   float a = 1.0;
   double b = 2.0;
-  partical_specialization(a);
-  partical_specialization(b);
+  bsy::partical_specialization(a);
+  bsy::partical_specialization(b);
 
+  DistributeGeneratorParameter param;
+  Generator<float >* generator = new GaussianGenerator<float>(param);
+  float arr[10] = {0.0f};
+
+  generator->Generate(arr, 10);
+  for(auto item :arr ){
+    LOG(INFO) << item;
+  }
+  delete generator;
 
  return 0;
 }

@@ -106,6 +106,9 @@ tools/bsy.bin: /usr/local/lib/libopencv_videoio.so.3.4.10
 tools/bsy.bin: /usr/local/lib/libopencv_imgcodecs.so.3.4.10
 tools/bsy.bin: /usr/local/lib/libopencv_imgproc.so.3.4.10
 tools/bsy.bin: /usr/local/lib/libopencv_core.so.3.4.10
+tools/bsy.bin: /usr/lib/x86_64-linux-gnu/liblapack.so
+tools/bsy.bin: /usr/lib/x86_64-linux-gnu/libcblas.so
+tools/bsy.bin: /usr/lib/x86_64-linux-gnu/libatlas.so
 tools/bsy.bin: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
 tools/bsy.bin: tools/CMakeFiles/bsy.bin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liyang/bsy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bsy.bin"

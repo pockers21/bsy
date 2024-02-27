@@ -298,6 +298,9 @@ src/bsy/libbsy.so: /usr/local/cuda/lib64/libcudart.so
 src/bsy/libbsy.so: /usr/local/cuda/lib64/libcurand.so
 src/bsy/libbsy.so: /usr/lib/x86_64-linux-gnu/libcublas.so
 src/bsy/libbsy.so: /usr/local/lib/libopencv_highgui.so.3.4.10
+src/bsy/libbsy.so: /usr/lib/x86_64-linux-gnu/liblapack.so
+src/bsy/libbsy.so: /usr/lib/x86_64-linux-gnu/libcblas.so
+src/bsy/libbsy.so: /usr/lib/x86_64-linux-gnu/libatlas.so
 src/bsy/libbsy.so: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
 src/bsy/libbsy.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 src/bsy/libbsy.so: /usr/local/lib/libboost_atomic.so.1.84.0

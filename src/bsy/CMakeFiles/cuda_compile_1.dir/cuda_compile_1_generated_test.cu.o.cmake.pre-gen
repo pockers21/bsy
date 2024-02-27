@@ -79,7 +79,7 @@ set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list
-set(CUDA_NVCC_INCLUDE_DIRS [==[/home/liyang/bsy/include;/home/liyang/bsy/src;/usr/local/include;-fopenmp;/usr/include/hdf5/serial;/usr/include;/usr/local/cuda/include;/usr/local/include;/usr/local/include/opencv;/usr/local/cuda/include;/home/liyang/bsy/include;/usr/include/hdf5/serial;/home/liyang/bsy]==]) # list (needs to be in lua quotes to address backslashes)
+set(CUDA_NVCC_INCLUDE_DIRS [==[/home/liyang/bsy/include;/home/liyang/bsy/src;/usr/local/include;-fopenmp;/usr/include/hdf5/serial;/usr/include;/usr/local/cuda/include;/usr/local/include;/usr/local/include/opencv;/usr/include/x86_64-linux-gnu;/usr/include/x86_64-linux-gnu;/usr/local/cuda/include;/home/liyang/bsy/include;/usr/include/hdf5/serial;/home/liyang/bsy]==]) # list (needs to be in lua quotes to address backslashes)
 string(REPLACE "\\" "/" CUDA_NVCC_INCLUDE_DIRS "${CUDA_NVCC_INCLUDE_DIRS}")
 set(CUDA_NVCC_COMPILE_DEFINITIONS [==[BSY_VERSION=1.0.0;USE_HDF5]==]) # list (needs to be in lua quotes see #16510 ).
 set(format_flag "-c") # string

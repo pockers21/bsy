@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13\x62sy/proto/bsy.proto\x12\x03\x62sy\"\x13\n\x04test\x12\x0b\n\x03num\x18\x01 \x01(\x05'
+  serialized_pb=b'\n\x13\x62sy/proto/bsy.proto\x12\x03\x62sy\"\x13\n\x04test\x12\x0b\n\x03num\x18\x01 \x01(\x05\"\xa0\x01\n\x1c\x44istributeGeneratorParameter\x12\x16\n\x04type\x18\x01 \x01(\t:\x08\x63onstant\x12\x13\n\x08\x63onstant\x18\x02 \x01(\x02:\x01\x30\x12\x0e\n\x03min\x18\x03 \x01(\x02:\x01\x30\x12\x0e\n\x03max\x18\x04 \x01(\x02:\x01\x31\x12\x0f\n\x04mean\x18\x05 \x01(\x02:\x01\x30\x12\x0e\n\x03std\x18\x06 \x01(\x02:\x01\x31\x12\x12\n\x06sparse\x18\x07 \x01(\x05:\x02-1'
 )
 
 
@@ -56,7 +56,82 @@ _TEST = _descriptor.Descriptor(
   serialized_end=47,
 )
 
+
+_DISTRIBUTEGENERATORPARAMETER = _descriptor.Descriptor(
+  name='DistributeGeneratorParameter',
+  full_name='bsy.DistributeGeneratorParameter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='bsy.DistributeGeneratorParameter.type', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=True, default_value=b"constant".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='constant', full_name='bsy.DistributeGeneratorParameter.constant', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='min', full_name='bsy.DistributeGeneratorParameter.min', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max', full_name='bsy.DistributeGeneratorParameter.max', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(1),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mean', full_name='bsy.DistributeGeneratorParameter.mean', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='std', full_name='bsy.DistributeGeneratorParameter.std', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(1),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sparse', full_name='bsy.DistributeGeneratorParameter.sparse', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=True, default_value=-1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=50,
+  serialized_end=210,
+)
+
 DESCRIPTOR.message_types_by_name['test'] = _TEST
+DESCRIPTOR.message_types_by_name['DistributeGeneratorParameter'] = _DISTRIBUTEGENERATORPARAMETER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 test = _reflection.GeneratedProtocolMessageType('test', (_message.Message,), {
@@ -65,6 +140,13 @@ test = _reflection.GeneratedProtocolMessageType('test', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:bsy.test)
   })
 _sym_db.RegisterMessage(test)
+
+DistributeGeneratorParameter = _reflection.GeneratedProtocolMessageType('DistributeGeneratorParameter', (_message.Message,), {
+  'DESCRIPTOR' : _DISTRIBUTEGENERATORPARAMETER,
+  '__module__' : 'bsy.proto.bsy_pb2'
+  # @@protoc_insertion_point(class_scope:bsy.DistributeGeneratorParameter)
+  })
+_sym_db.RegisterMessage(DistributeGeneratorParameter)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -4,4 +4,7 @@
 tools/CMakeFiles/bsy.bin.dir/bsy.cpp.o
  /home/liyang/bsy/tools/bsy.cpp
  include/bsy/common.hpp
+ include/bsy/distribute_generator.hpp
+ include/bsy/proto/bsy.pb.h
+ include/bsy/util/gpu_relative.hpp
  include/bsy/util/math.hpp

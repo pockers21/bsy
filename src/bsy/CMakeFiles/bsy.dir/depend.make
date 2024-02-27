@@ -5,5 +5,7 @@ src/bsy/CMakeFiles/bsy.dir/test.cpp.o: src/bsy/test.cpp
 
 src/bsy/CMakeFiles/bsy.dir/util/math.cpp.o: src/bsy/util/math.cpp
 src/bsy/CMakeFiles/bsy.dir/util/math.cpp.o: include/bsy/common.hpp
+src/bsy/CMakeFiles/bsy.dir/util/math.cpp.o: include/bsy/proto/bsy.pb.h
+src/bsy/CMakeFiles/bsy.dir/util/math.cpp.o: include/bsy/util/gpu_relative.hpp
 src/bsy/CMakeFiles/bsy.dir/util/math.cpp.o: include/bsy/util/math.hpp
 

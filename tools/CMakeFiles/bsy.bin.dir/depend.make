@@ -3,5 +3,8 @@
 
 tools/CMakeFiles/bsy.bin.dir/bsy.cpp.o: tools/bsy.cpp
 tools/CMakeFiles/bsy.bin.dir/bsy.cpp.o: include/bsy/common.hpp
+tools/CMakeFiles/bsy.bin.dir/bsy.cpp.o: include/bsy/distribute_generator.hpp
+tools/CMakeFiles/bsy.bin.dir/bsy.cpp.o: include/bsy/proto/bsy.pb.h
+tools/CMakeFiles/bsy.bin.dir/bsy.cpp.o: include/bsy/util/gpu_relative.hpp
 tools/CMakeFiles/bsy.bin.dir/bsy.cpp.o: include/bsy/util/math.hpp
 
