@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13\x62sy/proto/bsy.proto\x12\x03\x62sy\"\x13\n\x04test\x12\x0b\n\x03num\x18\x01 \x01(\x05\"!\n\x0e\x44\x61taBlockShape\x12\x0f\n\x03\x64im\x18\x01 \x03(\x03\x42\x02\x10\x01\"\x8a\x01\n\x0e\x44\x61taBlockProto\x12\"\n\x05shape\x18\x01 \x01(\x0b\x32\x13.bsy.DataBlockShape\x12\x10\n\x04\x64\x61ta\x18\x02 \x03(\x02\x42\x02\x10\x01\x12\x10\n\x04\x64iff\x18\x03 \x03(\x02\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_data\x18\x04 \x03(\x01\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_diff\x18\x05 \x03(\x01\x42\x02\x10\x01\"\x90\x01\n\x1c\x44istributeGeneratorParameter\x12\x16\n\x04type\x18\x01 \x01(\t:\x08\x63onstant\x12\x13\n\x08\x63onstant\x18\x02 \x01(\x02:\x01\x30\x12\x0e\n\x03max\x18\x04 \x01(\x02:\x01\x31\x12\x0f\n\x04mean\x18\x05 \x01(\x02:\x01\x30\x12\x0e\n\x03std\x18\x06 \x01(\x02:\x01\x31\x12\x12\n\x06sparse\x18\x07 \x01(\x05:\x02-1'
+  serialized_pb=b'\n\x13\x62sy/proto/bsy.proto\x12\x03\x62sy\"\x13\n\x04test\x12\x0b\n\x03num\x18\x01 \x01(\x05\"!\n\x0e\x44\x61taBlockShape\x12\x0f\n\x03\x64im\x18\x01 \x03(\x03\x42\x02\x10\x01\"\x8a\x01\n\x0e\x44\x61taBlockProto\x12\"\n\x05shape\x18\x01 \x01(\x0b\x32\x13.bsy.DataBlockShape\x12\x10\n\x04\x64\x61ta\x18\x02 \x03(\x02\x42\x02\x10\x01\x12\x10\n\x04\x64iff\x18\x03 \x03(\x02\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_data\x18\x04 \x03(\x01\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_diff\x18\x05 \x03(\x01\x42\x02\x10\x01\"\xa0\x01\n\x1c\x44istributeGeneratorParameter\x12\x16\n\x04type\x18\x01 \x01(\t:\x08\x63onstant\x12\x13\n\x08\x63onstant\x18\x02 \x01(\x02:\x01\x30\x12\x0e\n\x03min\x18\x03 \x01(\x02:\x01\x30\x12\x0e\n\x03max\x18\x04 \x01(\x02:\x01\x31\x12\x0f\n\x04mean\x18\x05 \x01(\x02:\x01\x30\x12\x0e\n\x03std\x18\x06 \x01(\x02:\x01\x31\x12\x12\n\x06sparse\x18\x07 \x01(\x05:\x02-1'
 )
 
 
@@ -172,28 +172,35 @@ _DISTRIBUTEGENERATORPARAMETER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='max', full_name='bsy.DistributeGeneratorParameter.max', index=2,
+      name='min', full_name='bsy.DistributeGeneratorParameter.min', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max', full_name='bsy.DistributeGeneratorParameter.max', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mean', full_name='bsy.DistributeGeneratorParameter.mean', index=3,
+      name='mean', full_name='bsy.DistributeGeneratorParameter.mean', index=4,
       number=5, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='std', full_name='bsy.DistributeGeneratorParameter.std', index=4,
+      name='std', full_name='bsy.DistributeGeneratorParameter.std', index=5,
       number=6, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sparse', full_name='bsy.DistributeGeneratorParameter.sparse', index=5,
+      name='sparse', full_name='bsy.DistributeGeneratorParameter.sparse', index=6,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=True, default_value=-1,
       message_type=None, enum_type=None, containing_type=None,
@@ -212,7 +219,7 @@ _DISTRIBUTEGENERATORPARAMETER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=226,
-  serialized_end=370,
+  serialized_end=386,
 )
 
 _DATABLOCKPROTO.fields_by_name['shape'].message_type = _DATABLOCKSHAPE

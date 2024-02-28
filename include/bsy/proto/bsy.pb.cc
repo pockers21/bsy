@@ -134,22 +134,24 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_bsy_2eproto::offsets[] PROTOBU
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, type_),
   PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, constant_),
+  PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, min_),
   PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, max_),
   PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, mean_),
   PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, std_),
   PROTOBUF_FIELD_OFFSET(::bsy::DistributeGeneratorParameter, sparse_),
   0,
   1,
-  4,
   2,
   5,
   3,
+  6,
+  4,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 6, sizeof(::bsy::test)},
   { 7, -1, sizeof(::bsy::DataBlockShape)},
   { 13, 23, sizeof(::bsy::DataBlockProto)},
-  { 28, 39, sizeof(::bsy::DistributeGeneratorParameter)},
+  { 28, 40, sizeof(::bsy::DistributeGeneratorParameter)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -165,10 +167,11 @@ const char descriptor_table_protodef_bsy_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "aBlockProto\022\"\n\005shape\030\001 \001(\0132\023.bsy.DataBlo"
   "ckShape\022\020\n\004data\030\002 \003(\002B\002\020\001\022\020\n\004diff\030\003 \003(\002B"
   "\002\020\001\022\027\n\013double_data\030\004 \003(\001B\002\020\001\022\027\n\013double_d"
-  "iff\030\005 \003(\001B\002\020\001\"\220\001\n\034DistributeGeneratorPar"
+  "iff\030\005 \003(\001B\002\020\001\"\240\001\n\034DistributeGeneratorPar"
   "ameter\022\026\n\004type\030\001 \001(\t:\010constant\022\023\n\010consta"
-  "nt\030\002 \001(\002:\0010\022\016\n\003max\030\004 \001(\002:\0011\022\017\n\004mean\030\005 \001("
-  "\002:\0010\022\016\n\003std\030\006 \001(\002:\0011\022\022\n\006sparse\030\007 \001(\005:\002-1"
+  "nt\030\002 \001(\002:\0010\022\016\n\003min\030\003 \001(\002:\0010\022\016\n\003max\030\004 \001(\002"
+  ":\0011\022\017\n\004mean\030\005 \001(\002:\0010\022\016\n\003std\030\006 \001(\002:\0011\022\022\n\006"
+  "sparse\030\007 \001(\005:\002-1"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_bsy_2eproto_deps[1] = {
 };
@@ -180,7 +183,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bsy
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_bsy_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bsy_2eproto = {
-  false, false, descriptor_table_protodef_bsy_2eproto, "bsy.proto", 360,
+  false, false, descriptor_table_protodef_bsy_2eproto, "bsy.proto", 376,
   &descriptor_table_bsy_2eproto_once, descriptor_table_bsy_2eproto_sccs, descriptor_table_bsy_2eproto_deps, 4, 0,
   schemas, file_default_instances, TableStruct_bsy_2eproto::offsets,
   file_level_metadata_bsy_2eproto, 4, file_level_enum_descriptors_bsy_2eproto, file_level_service_descriptors_bsy_2eproto,
@@ -988,17 +991,20 @@ class DistributeGeneratorParameter::_Internal {
   static void set_has_constant(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
-  static void set_has_max(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_mean(HasBits* has_bits) {
+  static void set_has_min(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_std(HasBits* has_bits) {
+  static void set_has_max(HasBits* has_bits) {
     (*has_bits)[0] |= 32u;
   }
-  static void set_has_sparse(HasBits* has_bits) {
+  static void set_has_mean(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
+  }
+  static void set_has_std(HasBits* has_bits) {
+    (*has_bits)[0] |= 64u;
+  }
+  static void set_has_sparse(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
   }
 };
 
@@ -1071,7 +1077,7 @@ void DistributeGeneratorParameter::Clear() {
   if (cached_has_bits & 0x00000001u) {
     type_.ClearToDefault(&::bsy::DistributeGeneratorParameter::_i_give_permission_to_break_this_code_default_type_.get(), GetArena());
   }
-  if (cached_has_bits & 0x0000003eu) {
+  if (cached_has_bits & 0x0000007eu) {
     ::memset(&constant_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&mean_) -
         reinterpret_cast<char*>(&constant_)) + sizeof(mean_));
@@ -1108,6 +1114,14 @@ const char* DistributeGeneratorParameter::_InternalParse(const char* ptr, ::PROT
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           _Internal::set_has_constant(&has_bits);
           constant_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // optional float min = 3 [default = 0];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          _Internal::set_has_min(&has_bits);
+          min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
@@ -1189,26 +1203,32 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_constant(), target);
   }
 
+  // optional float min = 3 [default = 0];
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_min(), target);
+  }
+
   // optional float max = 4 [default = 1];
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_max(), target);
   }
 
   // optional float mean = 5 [default = 0];
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_mean(), target);
   }
 
   // optional float std = 6 [default = 1];
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_std(), target);
   }
 
   // optional int32 sparse = 7 [default = -1];
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_sparse(), target);
   }
@@ -1230,7 +1250,7 @@ size_t DistributeGeneratorParameter::ByteSizeLong() const {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 0x0000007fu) {
     // optional string type = 1 [default = "constant"];
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
@@ -1243,25 +1263,30 @@ size_t DistributeGeneratorParameter::ByteSizeLong() const {
       total_size += 1 + 4;
     }
 
-    // optional float mean = 5 [default = 0];
+    // optional float min = 3 [default = 0];
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 + 4;
     }
 
-    // optional int32 sparse = 7 [default = -1];
+    // optional float mean = 5 [default = 0];
     if (cached_has_bits & 0x00000008u) {
+      total_size += 1 + 4;
+    }
+
+    // optional int32 sparse = 7 [default = -1];
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_sparse());
     }
 
     // optional float max = 4 [default = 1];
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 + 4;
     }
 
     // optional float std = 6 [default = 1];
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 1 + 4;
     }
 
@@ -1298,7 +1323,7 @@ void DistributeGeneratorParameter::MergeFrom(const DistributeGeneratorParameter&
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 0x0000007fu) {
     if (cached_has_bits & 0x00000001u) {
       _internal_set_type(from._internal_type());
     }
@@ -1306,15 +1331,18 @@ void DistributeGeneratorParameter::MergeFrom(const DistributeGeneratorParameter&
       constant_ = from.constant_;
     }
     if (cached_has_bits & 0x00000004u) {
-      mean_ = from.mean_;
+      min_ = from.min_;
     }
     if (cached_has_bits & 0x00000008u) {
-      sparse_ = from.sparse_;
+      mean_ = from.mean_;
     }
     if (cached_has_bits & 0x00000010u) {
-      max_ = from.max_;
+      sparse_ = from.sparse_;
     }
     if (cached_has_bits & 0x00000020u) {
+      max_ = from.max_;
+    }
+    if (cached_has_bits & 0x00000040u) {
       std_ = from.std_;
     }
     _has_bits_[0] |= cached_has_bits;

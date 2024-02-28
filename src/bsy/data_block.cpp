@@ -49,8 +49,8 @@ void DataBlock<Dtype>::Reshape(const vector<int> shape) {
 
     if (count_ > capacity_) {
         capacity_ = count_;
-        data_.reset(new MemoryBlock(capacity_ * sizeof(Dtype)));
-        diff_.reset(new MemoryBlock(capacity_ * sizeof(Dtype)));
+        data_.reset(new MemoryBlock<Dtype>(capacity_ * sizeof(Dtype)));
+        diff_.reset(new MemoryBlock<Dtype>(capacity_ * sizeof(Dtype)));
     }
 }
 
@@ -86,8 +86,8 @@ void DataBlock<Dtype>::SetCpuData(Dtype* data) {
 
     size_t size = count_ * sizeof(Dtype);
     if (data_->size() != size) {
-        data_.reset(new MemoryBlock(size));
-        diff_.reset(new MemoryBlock(size));
+        data_.reset(new MemoryBlock<Dtype>(size));
+        diff_.reset(new MemoryBlock<Dtype>(size));
     }
     data_->set_cpu_data(data);
 }
@@ -96,8 +96,8 @@ template <typename Dtype>
 void DataBlock<Dtype>::SetCpuDiff(Dtype* data) {
     size_t size = count_ * sizeof(Dtype);
     if (data_->size() != size) {
-        data_.reset(new MemoryBlock(size));
-        diff_.reset(new MemoryBlock(size));
+        data_.reset(new MemoryBlock<Dtype>(size));
+        diff_.reset(new MemoryBlock<Dtype>(size));
     }
     diff_->set_cpu_data(data);
 }
@@ -106,8 +106,8 @@ template <typename Dtype>
 void DataBlock<Dtype>::SetGpuData(Dtype* data) {
     size_t size = count_ * sizeof(Dtype);
     if (data_->size() != size) {
-        data_.reset(new MemoryBlock(size));
-        diff_.reset(new MemoryBlock(size));
+        data_.reset(new MemoryBlock<Dtype>(size));
+        diff_.reset(new MemoryBlock<Dtype>(size));
     }
     this->diff_->set_gpu_data(data);
 }
@@ -117,8 +117,8 @@ void DataBlock<Dtype>::SetGpuDiff(Dtype* data) {
 
     size_t size = count_ * sizeof(Dtype);
     if (data_->size() != size) {
-        data_.reset(new MemoryBlock(size));
-        diff_.reset(new MemoryBlock(size));
+        data_.reset(new MemoryBlock<Dtype>(size));
+        diff_.reset(new MemoryBlock<Dtype>(size));
     }
     this->diff_->set_gpu_data(data);
 }

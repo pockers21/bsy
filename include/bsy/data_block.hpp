@@ -108,11 +108,11 @@ class DataBlock{
             return GetCpuDiff()[offset(index)];
         }
 
-        const shared_ptr<MemoryBlock>& GetDataMemBlock() const{
+        const shared_ptr<MemoryBlock<Dtype>>& GetDataMemBlock() const{
             return data_;
         }
 
-        const shared_ptr<MemoryBlock>& GetDiffMemBlock() const{
+        const shared_ptr<MemoryBlock<Dtype>>& GetDiffMemBlock() const{
             return diff_;
         }
 
@@ -138,8 +138,8 @@ class DataBlock{
         vector <int> shape_;
         int count_;
         int capacity_;
-        shared_ptr<MemoryBlock> data_;
-        shared_ptr<MemoryBlock> diff_;
+        shared_ptr<MemoryBlock<Dtype>> data_;
+        shared_ptr<MemoryBlock<Dtype>> diff_;
 
         FORBID_COPY_AND_ASSIGN(DataBlock)
 

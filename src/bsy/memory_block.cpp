@@ -4,18 +4,18 @@ namespace bsy {
 
 
 template<typename Dtype>
-MemoryBlock::MemoryBlock()
-       :cpu_ptr_(NULL), gpu_ptr_(NULL), size_(0), head_(HEAD_UNITED){}
+MemoryBlock<Dtype>::MemoryBlock()
+       :cpu_ptr_(NULL), gpu_ptr_(NULL), size_(0), status_(HEAD_UNITED){}
 
 
 template<typename Dtype>
-MemoryBlock::MemoryBlock(const size_t size)
-       :cpu_ptr_(NULL), gpu_ptr_(NULL), size_(0), head_(HEAD_UNITED){
+MemoryBlock<Dtype>::MemoryBlock(const size_t size)
+       :cpu_ptr_(NULL), gpu_ptr_(NULL), size_(0), status_(HEAD_UNITED){
     this->size_ = size;
 }
 
 template<typename Dtype>
-MemoryBlock::~MemoryBlock(const size_t size){
+MemoryBlock<Dtype>::~MemoryBlock(){
     if(cpu_ptr_){
         free(cpu_ptr_);
     }
@@ -28,7 +28,7 @@ MemoryBlock::~MemoryBlock(const size_t size){
 
 
 template<typename Dtype>
-void MemoryBlock::SetCpuData(Dtype * data){
+void MemoryBlock<Dtype>::SetCpuData(Dtype * data){
     CHECK(data);
     if(this->cpu_mem_occupied_){
         free(this->cpu_ptr_);
@@ -40,11 +40,11 @@ void MemoryBlock::SetCpuData(Dtype * data){
 
 
 template<typename Dtype>
-void* GetCpuData(){
-    switch{status_}{
+void* MemoryBlock<Dtype>::GetCpuData() const{
+    switch(this->status_){
         case HEAD_UNITED:
             cpu_ptr_ = malloc(size_);
-            CHECK(*cpu_ptr_) << "host allocation of size " << size_ << " failed";
+            CHECK(cpu_ptr_) << "host allocation of size " << size_ << " failed";
 
             cpu_mem_occupied_ = true;
             break;
@@ -60,7 +60,7 @@ void* GetCpuData(){
 
 
 template<typename Dtype>
-void MemoryBlock::SetGpuData(Dtype * data){
+void MemoryBlock<Dtype>::SetGpuData(Dtype * data){
 #ifndef CPU_ONLY
     CHECK(data);
     if(this->gpu_mem_occupied_){
@@ -74,9 +74,9 @@ void MemoryBlock::SetGpuData(Dtype * data){
 
 
 template<typename Dtype>
-void* GetGpuData(){
+void* MemoryBlock<Dtype>::GetGpuData() const{
 #ifdef CPU_ONLY
-    switch{status_}{
+    switch(this->status_){
         case HEAD_UNITED:
             gpu_ptr_ = cudaMalloc(size_);
             CUDA_CHECK(cudaMemset(size_, 0, gpu_ptr_));

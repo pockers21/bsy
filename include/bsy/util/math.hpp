@@ -3,6 +3,7 @@
 
 #include "bsy/common.hpp"
 #include <cblas.h>
+#include <math.h>
 
 namespace bsy{
 

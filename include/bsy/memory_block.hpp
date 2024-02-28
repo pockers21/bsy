@@ -8,14 +8,15 @@ class MemoryBlock{
     public:
         MemoryBlock();
         MemoryBlock(size_t size);
+        virtual ~MemoryBlock();
         enum CurrentStatus {HEAD_UNITED, HEAD_AT_CPU, HEAD_AT_GPU};
         const CurrentStatus GetStatus() const {return  status_;}
 
 
-        void SetCpuData(const Dtype * data);
-        void *GetCpuData(const Dtype * data) const;
+        void SetCpuData(Dtype * data);
+        void *GetCpuData() const;
 
-        void SetGpuData();
+        void SetGpuData(Dtype * data);
         void *GetGpuData() const;
 
     private:

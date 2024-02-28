@@ -761,6 +761,7 @@ class DistributeGeneratorParameter PROTOBUF_FINAL :
   enum : int {
     kTypeFieldNumber = 1,
     kConstantFieldNumber = 2,
+    kMinFieldNumber = 3,
     kMeanFieldNumber = 5,
     kSparseFieldNumber = 7,
     kMaxFieldNumber = 4,
@@ -806,6 +807,19 @@ class DistributeGeneratorParameter PROTOBUF_FINAL :
   private:
   float _internal_constant() const;
   void _internal_set_constant(float value);
+  public:
+
+  // optional float min = 3 [default = 0];
+  bool has_min() const;
+  private:
+  bool _internal_has_min() const;
+  public:
+  void clear_min();
+  float min() const;
+  void set_min(float value);
+  private:
+  float _internal_min() const;
+  void _internal_set_min(float value);
   public:
 
   // optional float mean = 5 [default = 0];
@@ -874,6 +888,7 @@ class DistributeGeneratorParameter PROTOBUF_FINAL :
   private:
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
   float constant_;
+  float min_;
   float mean_;
   ::PROTOBUF_NAMESPACE_ID::int32 sparse_;
   float max_;
@@ -1368,9 +1383,37 @@ inline void DistributeGeneratorParameter::set_constant(float value) {
   // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.constant)
 }
 
+// optional float min = 3 [default = 0];
+inline bool DistributeGeneratorParameter::_internal_has_min() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool DistributeGeneratorParameter::has_min() const {
+  return _internal_has_min();
+}
+inline void DistributeGeneratorParameter::clear_min() {
+  min_ = 0;
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline float DistributeGeneratorParameter::_internal_min() const {
+  return min_;
+}
+inline float DistributeGeneratorParameter::min() const {
+  // @@protoc_insertion_point(field_get:bsy.DistributeGeneratorParameter.min)
+  return _internal_min();
+}
+inline void DistributeGeneratorParameter::_internal_set_min(float value) {
+  _has_bits_[0] |= 0x00000004u;
+  min_ = value;
+}
+inline void DistributeGeneratorParameter::set_min(float value) {
+  _internal_set_min(value);
+  // @@protoc_insertion_point(field_set:bsy.DistributeGeneratorParameter.min)
+}
+
 // optional float max = 4 [default = 1];
 inline bool DistributeGeneratorParameter::_internal_has_max() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_max() const {
@@ -1378,7 +1421,7 @@ inline bool DistributeGeneratorParameter::has_max() const {
 }
 inline void DistributeGeneratorParameter::clear_max() {
   max_ = 1;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline float DistributeGeneratorParameter::_internal_max() const {
   return max_;
@@ -1388,7 +1431,7 @@ inline float DistributeGeneratorParameter::max() const {
   return _internal_max();
 }
 inline void DistributeGeneratorParameter::_internal_set_max(float value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
   max_ = value;
 }
 inline void DistributeGeneratorParameter::set_max(float value) {
@@ -1398,7 +1441,7 @@ inline void DistributeGeneratorParameter::set_max(float value) {
 
 // optional float mean = 5 [default = 0];
 inline bool DistributeGeneratorParameter::_internal_has_mean() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_mean() const {
@@ -1406,7 +1449,7 @@ inline bool DistributeGeneratorParameter::has_mean() const {
 }
 inline void DistributeGeneratorParameter::clear_mean() {
   mean_ = 0;
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline float DistributeGeneratorParameter::_internal_mean() const {
   return mean_;
@@ -1416,7 +1459,7 @@ inline float DistributeGeneratorParameter::mean() const {
   return _internal_mean();
 }
 inline void DistributeGeneratorParameter::_internal_set_mean(float value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   mean_ = value;
 }
 inline void DistributeGeneratorParameter::set_mean(float value) {
@@ -1426,7 +1469,7 @@ inline void DistributeGeneratorParameter::set_mean(float value) {
 
 // optional float std = 6 [default = 1];
 inline bool DistributeGeneratorParameter::_internal_has_std() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_std() const {
@@ -1434,7 +1477,7 @@ inline bool DistributeGeneratorParameter::has_std() const {
 }
 inline void DistributeGeneratorParameter::clear_std() {
   std_ = 1;
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline float DistributeGeneratorParameter::_internal_std() const {
   return std_;
@@ -1444,7 +1487,7 @@ inline float DistributeGeneratorParameter::std() const {
   return _internal_std();
 }
 inline void DistributeGeneratorParameter::_internal_set_std(float value) {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
   std_ = value;
 }
 inline void DistributeGeneratorParameter::set_std(float value) {
@@ -1454,7 +1497,7 @@ inline void DistributeGeneratorParameter::set_std(float value) {
 
 // optional int32 sparse = 7 [default = -1];
 inline bool DistributeGeneratorParameter::_internal_has_sparse() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool DistributeGeneratorParameter::has_sparse() const {
@@ -1462,7 +1505,7 @@ inline bool DistributeGeneratorParameter::has_sparse() const {
 }
 inline void DistributeGeneratorParameter::clear_sparse() {
   sparse_ = -1;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 DistributeGeneratorParameter::_internal_sparse() const {
   return sparse_;
@@ -1472,7 +1515,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 DistributeGeneratorParameter::sparse() con
   return _internal_sparse();
 }
 inline void DistributeGeneratorParameter::_internal_set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   sparse_ = value;
 }
 inline void DistributeGeneratorParameter::set_sparse(::PROTOBUF_NAMESPACE_ID::int32 value) {
