@@ -127,19 +127,152 @@ void DataBlock<Dtype>::SetGpuDiff(Dtype* data) {
 template <typename Dtype>
 void  DataBlock<Dtype>::ShareData(const DataBlock& other) {
     CHECK_EQUAL(count_, other.GetCount());
-    this->data_ = other.GetDataMemBlock();
+    data_ = other.GetDataMemBlock();
 }
 
 template <typename Dtype>
 void DataBlock<Dtype>::ShareDiff(const DataBlock& other) {
     CHECK_EQUAL(this->count_, other.GetCount());
-    this->diff_ = other.GetDiffMemBlock();
+    diff_ = other.GetDiffMemBlock();
+}
+
+template <typename Dtype>
+Dtype Blob<Dtype>::AbsSumData() const {
+    CHECK(data_);
+    switch (data_->GetStatus()) {
+        case MemoryBlock::HEAD_UNITED:
+            return 0;
+        case MemoryBlock::HEAD_AT_CPU:
+            return bsy_cpu_asum(count_, GetCpuData());
+            break;
+        case MemoryBlock::HEAD_AT_GPU:
+            #ifndef CPU_ONLY
+              {
+                Dtype asum;
+                bsy_gpu_asum(count_, GetGpuData(), &asum);
+                return asum;
+              }
+            #else
+         break;
+
+
+    }
+    return 0;
+}
+
+template <typename Dtype>
+Dtype Blob<Dtype>::AbsSumDiff() const {
+    CHECK(data_);
+    switch (diff_->GetStatus()) {
+        case MemoryBlock::HEAD_UNITED:
+            return 0;
+        case MemoryBlock::HEAD_AT_CPU:
+            return bsy_gpu_asum(count_, GetCpuDiff());
+            break;
+        case MemoryBlock::HEAD_AT_GPU:
+            #ifndef CPU_ONLY
+              {
+                Dtype asum;
+                bsy_gpu_asum(count_, GetGpuDiff(), &asum);
+                return asum;
+              }
+            #else
+         break;
+    }
+    return 0;
+}
+
+template <typename Dtype>
+Dtype Blob<Dtype>::DotSumData() const {
+    CHECK(data_);
+    switch (data_->GetStatus()) {
+        case MemoryBlock::HEAD_UNITED:
+            return 0;
+        case MemoryBlock::HEAD_AT_CPU:
+            return bsy_cpu_dot(count_, GetCpuData());
+            break;
+        case MemoryBlock::HEAD_AT_GPU:
+            #ifndef CPU_ONLY
+              {
+                Dtype dot;
+                bsy_gpu_dot(count_, GetGpuData(), &dot);
+                return dot;
+              }
+            #else
+         break;
+
+
+    }
+    return 0;
+}
+
+template <typename Dtype>
+Dtype Blob<Dtype>::DotSumDiff() const {
+    CHECK(data_);
+    switch (diff_->GetStatus()) {
+        case MemoryBlock::HEAD_UNITED:
+            return 0;
+        case MemoryBlock::HEAD_AT_CPU:
+            return bsy_cpu_dot(count_, GetCpuDiff());
+            break;
+        case MemoryBlock::HEAD_AT_GPU:
+            #ifndef CPU_ONLY
+              {
+                Dtype dot;
+                bsy_gpu_dot(count_, GetGpuDiff(), &dot);
+                return dot;
+              }
+            #else
+         break;
+    }
+    return 0;
 }
 
 
+template <typename Dtype>
+Dtype Blob<Dtype>::ScaleData() const {
+    CHECK(data_);
+    switch (data_->GetStatus()) {
+        case MemoryBlock::HEAD_UNITED:
+            return ;
+        case MemoryBlock::HEAD_AT_CPU:
+            return bsy_cpu_scale(count_, GetCpuData());
+            break;
+        case MemoryBlock::HEAD_AT_GPU:
+            #ifndef CPU_ONLY
+              {
+                Dtype scale;
+                bsy_gpu_scale(count_, GetGpuData(), &dot);
+                return ;
+              }
+            #else
+         break;
 
 
+    }
+    return ;
+}
 
+template <typename Dtype>
+Dtype Blob<Dtype>::ScaleDiff() const {
+    CHECK(data_);
+    switch (diff_->GetStatus()) {
+        case MemoryBlock::HEAD_UNITED:
+            return ;
+        case MemoryBlock::HEAD_AT_CPU:
+            return bsy_cpu_scale(count_, GetCpuDiff());
+            break;
+        case MemoryBlock::HEAD_AT_GPU:
+            #ifndef CPU_ONLY
+              {
+                bsy_gpu_scale(count_, GetGpuDiff(), &dot);
+                return ;
+              }
+            #else
+         break;
+    }
+    return ;
+}
 
 
 }
