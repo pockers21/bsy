@@ -2,8 +2,9 @@ syntax = "proto2";
 
 package bsy;
 
-message test {
-  optional  int32 num = 1;
+enum Phase {
+   TRAIN = 0;
+   TEST = 1;
 }
 
 
@@ -33,3 +34,67 @@ message DistributeGeneratorParameter {
   // Gaussian filler -- the default -1 means don't perform sparsification.
   optional int32 sparse = 7 [default = -1];
 }
+
+message TransformationParameter {
+  // For data pre-processing, we can do simple scaling and subtracting the
+  // data mean, if provided. Note that the mean subtraction is always carried
+  // out before scaling.
+  optional float scale = 1 [default = 1];
+  // Specify if we want to randomly mirror data.
+  optional bool mirror = 2 [default = false];
+  // Specify if we would like to randomly crop an image.
+  optional uint32 crop_size = 3 [default = 0];
+  // mean_file and mean_value cannot be specified at the same time
+  optional string mean_file = 4;
+  // if specified can be repeated once (would subtract it from all the channels)
+  // or can be repeated the same number of times as channels
+  // (would subtract them from the corresponding channel)
+  repeated float mean_value = 5;
+  // Force the decoded image to have 3 color channels.
+  optional bool force_color = 6 [default = false];
+  // Force the decoded image to have 1 color channels.
+  optional bool force_gray = 7 [default = false];
+}
+message  DataParam {
+  enum DB {
+    LEVELDB = 0;
+  }
+
+  // Specify the data source.
+  optional string source = 1;
+  // Specify the batch size.
+  optional uint32 batch_size = 2;
+  optional DB backend = 8 [default = LEVELDB];
+
+}
+
+message LayerParameter {
+
+  optional string name = 1; // the layer name
+  optional string type = 2; // the layer type
+  repeated string bottom = 3; // the name of each bottom DataBlockProto
+  repeated string top = 4; // the name of each top DataBlockProto
+
+  optional  Phase phase = 5;
+
+  // The amount of weight to assign each top blob in the objective.
+  // Each layer assigns a default value, usually of either 0 or 1,
+  // to each top blob.
+  repeated float loss_weight = 6;
+
+  // The blobs containing the numeric parameters of the layer.
+  repeated DataBlockProto data_blocks = 7;
+
+  // Specifies whether to backpropagate to each bottom. If unspecified,
+  // Bsy will automatically infer whether each input needs backpropagation
+  // to compute parameter gradients. If set to true for some inputs,
+  // backpropagation to those inputs is forced; if set false for some inputs,
+  // backpropagation to those inputs is skipped.
+  //
+  // The size must be either 0 or equal to the number of bottoms.
+  repeated bool propagate_down = 8;
+
+}
+
+
+

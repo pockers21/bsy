@@ -189,14 +189,10 @@ void bsy_cpu_scale_to_other<double>(const int n, const double alpha, const doubl
 template <typename Dtype>
 void bsy_copy(const int N, const Dtype* X, Dtype* Y) {
   if (X != Y) {
-#ifdef HAVE_CUDA
-#ifndef CPU_ONLY
+    if(!ProgramCpuMode) {
       // NOLINT_NEXT_LINE(caffe/alt_fn)
       CUDA_CHECK(cudaMemcpy(Y, X, sizeof(Dtype) * N, cudaMemcpyDefault));
-#else
-      NO_GPU;
-#endif
-#endif
+
     } else {
       memcpy(Y, X, sizeof(Dtype) * N);  // NOLINT(caffe/alt_fn)
     }

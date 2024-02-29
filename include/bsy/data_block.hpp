@@ -116,7 +116,7 @@ class DataBlock{
             return diff_;
         }
 
-        bool ShapeEquals(const DataBlockProto& other){
+        bool ShapeEqualsWithProto(const DataBlockProto& other){
             vector<int> other_shape(other.shape().dim_size());
             for (int i = 0; i < other.shape().dim_size(); ++i) {
               other_shape[i] = other.shape().dim(i);
@@ -128,6 +128,65 @@ class DataBlock{
 
         void ShareDiff(const DataBlock& other);
 
+        inline int count(int start_axis, int end_axis) const {
+            CHECK_LE(start_axis, end_axis);
+            CHECK_GE(start_axis, 0);
+            CHECK_GE(end_axis, 0);
+            CHECK_LE(start_axis, GetAxes());
+            CHECK_LE(end_axis, GetAxes());
+            int count = 1;
+
+            for (int i = start_axis; i < end_axis; ++i) {
+              count *= shape(i);
+            }
+            return count;
+        }
+
+        inline int count(int start_axis) const {
+            return count(start_axis, GetAxes());
+        }
+
+        void FromProto(const DataBlockProto& proto, bool reshape) {
+            if(reshape) {
+                vector<int> shape;
+                shape.resize(proto.shape().dim_size());
+                for (int i = 0; i < proto.shape().dim_size(); ++i) {
+                    shape[i] = proto.shape().dim(i);
+                }
+                this->Reshape(shape);
+            } else {
+               CHECK(this->ShapeEqualsWithProto(proto))
+            }
+            Dtype* data_vec = GetCpuData();
+            if (proto.double_data_size() > 0) {
+                CHECK_EQ(count_, proto.double_data_size());
+                for (int i = 0; i < count_; ++i) {
+                  data_vec[i] = proto.double_data(i);
+                }
+            } else {
+                CHECK_EQ(count_, proto.data_size());
+                for (int i = 0; i < count_; ++i) {
+                  data_vec[i] = proto.data(i);
+                }
+            }
+
+            if (proto.double_diff_size() > 0) {
+                CHECK_EQ(count_, proto.double_diff_size());
+                Dtype* diff_vec = mutable_cpu_diff();
+                for (int i = 0; i < count_; ++i) {
+                  diff_vec[i] = proto.double_diff(i);
+                }
+            } else if (proto.diff_size() > 0) {
+                CHECK_EQ(count_, proto.diff_size());
+                Dtype* diff_vec = mutable_cpu_diff();
+                for (int i = 0; i < count_; ++i) {
+                  diff_vec[i] = proto.diff(i);
+                }
+            }
+        }
+
+
+        void ToProto(BlobProto* proto, bool write_diff = false) const;
     private:
 
         int num_;

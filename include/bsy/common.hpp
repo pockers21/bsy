@@ -22,3 +22,13 @@ using namespace std;
 #define FORBID_COPY_AND_ASSIGN(classname) \
     classname(const classname&) = delete; \
     classname& operator=(const classname&) = delete;
+
+
+bool ProgramCpuMode() {
+    #ifndef CPU_ONLY
+    #ifdef HAVE_CUDA
+    return false;
+    #endif
+    #endif
+    return true;
+}

@@ -52,30 +52,30 @@ void bsy_scal(const int N, const Dtype alpha, Dtype *X);
 // gemm function - following the c convention and calling the fortran-order
 // gpu code under the hood.
 template <typename Dtype>
-void caffe_gpu_gemm(const CBLAS_TRANSPOSE TransA,
+void bsy_gpu_gemm(const CBLAS_TRANSPOSE TransA,
     const CBLAS_TRANSPOSE TransB, const int M, const int N, const int K,
     const Dtype alpha, const Dtype* A, const Dtype* B, const Dtype beta,
     Dtype* C);
 
 template <typename Dtype>
-void caffe_gpu_gemv(const CBLAS_TRANSPOSE TransA, const int M, const int N,
+void bsy_gpu_gemv(const CBLAS_TRANSPOSE TransA, const int M, const int N,
     const Dtype alpha, const Dtype* A, const Dtype* x, const Dtype beta,
     Dtype* y);
 
 template <typename Dtype>
-void caffe_gpu_axpy(const int N, const Dtype alpha, const Dtype* X,
+void bsy_gpu_axpy(const int N, const Dtype alpha, const Dtype* X,
     Dtype* Y);
 
 template <typename Dtype>
-void caffe_gpu_axpby(const int N, const Dtype alpha, const Dtype* X,
+void bsy_gpu_axpby(const int N, const Dtype alpha, const Dtype* X,
     const Dtype beta, Dtype* Y);
 
-void caffe_gpu_memcpy(const size_t N, const void *X, void *Y);
+void bsy_gpu_memcpy(const size_t N, const void *X, void *Y);
 
 template <typename Dtype>
-void caffe_gpu_set(const int N, const Dtype alpha, Dtype *X);
+void bsy_gpu_set(const int N, const Dtype alpha, Dtype *X);
 
-inline void caffe_gpu_memset(const size_t N, const int alpha, void* X) {
+inline void bsy_gpu_memset(const size_t N, const int alpha, void* X) {
 #ifndef CPU_ONLY
   CUDA_CHECK(cudaMemset(X, alpha, N));  // NOLINT(bsy/alt_fn)
 #else
@@ -151,13 +151,13 @@ __global__ void name##_kernel(const int n, const Dtype* x, Dtype* y) { \
 template <> \
 void bsy_gpu_##name<float>(const int n, const float* x, float* y) { \
   /* NOLINT_NEXT_LINE(whitespace/operators) */ \
-  name##_kernel<float><<<CAFFE_GET_BLOCKS(n), CAFFE_CUDA_NUM_THREADS>>>( \
+  name##_kernel<float><<<BSY_GET_BLOCKS(n), BSY_CUDA_NUM_THREADS>>>( \
       n, x, y); \
 } \
 template <> \
 void bsy_gpu_##name<double>(const int n, const double* x, double* y) { \
   /* NOLINT_NEXT_LINE(whitespace/operators) */ \
-  name##_kernel<double><<<CAFFE_GET_BLOCKS(n), CAFFE_CUDA_NUM_THREADS>>>( \
+  name##_kernel<double><<<BSY_GET_BLOCKS(n), BSY_CUDA_NUM_THREADS>>>( \
       n, x, y); \
 }
 
