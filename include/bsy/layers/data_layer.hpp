@@ -25,11 +25,11 @@ class DataLayer: Layer<Dtype> {
 
         virtual void BackwardCpu(const vector<DataBlock<Dtype>*>& top,
             const vector<bool>& propagate_down,
-            const vector<DataBlock<Dtype>*>& bottom);
+            const vector<DataBlock<Dtype>*>& bottom){};
 
         virtual void BackwardGpu(const vector<DataBlock<Dtype>*>& top,
             const vector<bool>& propagate_down,
-            const vector<DataBlock<Dtype>*>& bottom);
+            const vector<DataBlock<Dtype>*>& bottom){};
 
         virtual void LoadBatch(Batch<Dtype>* batch) = 0;
     private:

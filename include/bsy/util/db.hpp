@@ -49,6 +49,8 @@ namespace db{
                 CHECK(status.ok()) << "Failed to open leveldb " << source
                                  << std::endl << status.ToString();
                 LOG(INFO) << "Opened leveldb " << source;
+                iter_ = db_->NewIterator(leveldb::ReadOptions());
+                this->CursorSeekFirst();
             }
 
             virtual CursorSeekFirst() {
