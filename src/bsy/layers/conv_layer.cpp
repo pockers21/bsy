@@ -359,7 +359,7 @@ void ConvolutionLayer<Dtype>::BackwardCpuGemm(const Dtype* output,
 }
 
 template <typename Dtype>
-void ConvolutionLayer<Dtype>::weight_cpu_gemm(const Dtype* input,
+void ConvolutionLayer<Dtype>::WeightCpuGemm(const Dtype* input,
     const Dtype* output, Dtype* weights) {
   const Dtype* col_buff = input;
   if (!is_1x1_) {
@@ -375,7 +375,7 @@ void ConvolutionLayer<Dtype>::weight_cpu_gemm(const Dtype* input,
 }
 
 template <typename Dtype>
-void ConvolutionLayer<Dtype>::backward_cpu_bias(Dtype* bias,
+void ConvolutionLayer<Dtype>::BackwardCpuBias(Dtype* bias,
     const Dtype* input) {
   bsy_cpu_gemv<Dtype>(CblasNoTrans, num_output_, out_spatial_dim_, 1.,
       input, bias_multiplier_.cpu_data(), 1., bias);
