@@ -213,6 +213,60 @@ __/__/include/bsy/proto/bsy.pb.cc.s:
 	cd /home/liyang/bsy && $(MAKE) -f src/bsy/CMakeFiles/bsyproto.dir/build.make src/bsy/CMakeFiles/bsyproto.dir/__/__/include/bsy/proto/bsy.pb.cc.s
 .PHONY : __/__/include/bsy/proto/bsy.pb.cc.s
 
+data_block.o: data_block.cpp.o
+
+.PHONY : data_block.o
+
+# target to build an object file
+data_block.cpp.o:
+	cd /home/liyang/bsy && $(MAKE) -f src/bsy/CMakeFiles/bsy.dir/build.make src/bsy/CMakeFiles/bsy.dir/data_block.cpp.o
+.PHONY : data_block.cpp.o
+
+data_block.i: data_block.cpp.i
+
+.PHONY : data_block.i
+
+# target to preprocess a source file
+data_block.cpp.i:
+	cd /home/liyang/bsy && $(MAKE) -f src/bsy/CMakeFiles/bsy.dir/build.make src/bsy/CMakeFiles/bsy.dir/data_block.cpp.i
+.PHONY : data_block.cpp.i
+
+data_block.s: data_block.cpp.s
+
+.PHONY : data_block.s
+
+# target to generate assembly for a file
+data_block.cpp.s:
+	cd /home/liyang/bsy && $(MAKE) -f src/bsy/CMakeFiles/bsy.dir/build.make src/bsy/CMakeFiles/bsy.dir/data_block.cpp.s
+.PHONY : data_block.cpp.s
+
+memory_block.o: memory_block.cpp.o
+
+.PHONY : memory_block.o
+
+# target to build an object file
+memory_block.cpp.o:
+	cd /home/liyang/bsy && $(MAKE) -f src/bsy/CMakeFiles/bsy.dir/build.make src/bsy/CMakeFiles/bsy.dir/memory_block.cpp.o
+.PHONY : memory_block.cpp.o
+
+memory_block.i: memory_block.cpp.i
+
+.PHONY : memory_block.i
+
+# target to preprocess a source file
+memory_block.cpp.i:
+	cd /home/liyang/bsy && $(MAKE) -f src/bsy/CMakeFiles/bsy.dir/build.make src/bsy/CMakeFiles/bsy.dir/memory_block.cpp.i
+.PHONY : memory_block.cpp.i
+
+memory_block.s: memory_block.cpp.s
+
+.PHONY : memory_block.s
+
+# target to generate assembly for a file
+memory_block.cpp.s:
+	cd /home/liyang/bsy && $(MAKE) -f src/bsy/CMakeFiles/bsy.dir/build.make src/bsy/CMakeFiles/bsy.dir/memory_block.cpp.s
+.PHONY : memory_block.cpp.s
+
 test.o: test.cpp.o
 
 .PHONY : test.o
@@ -284,6 +338,12 @@ help:
 	@echo "... __/__/include/bsy/proto/bsy.pb.o"
 	@echo "... __/__/include/bsy/proto/bsy.pb.i"
 	@echo "... __/__/include/bsy/proto/bsy.pb.s"
+	@echo "... data_block.o"
+	@echo "... data_block.i"
+	@echo "... data_block.s"
+	@echo "... memory_block.o"
+	@echo "... memory_block.i"
+	@echo "... memory_block.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

@@ -58,9 +58,9 @@ set(python_version "3" CACHE STRING "Specify which Python version to use")
 
 option(USE_OPENCV "Build bsy with opencv " ON)
 option(USE_LEVELDB "Build bsy with level db" ON)
-option(USE_LMDB "Build bsy with lmdb" ON)
-option(USE_OPENMP "Build bsy with openmp" ON)
-option(USE_HDF5 "Build bsy with hdf5" ON)
+#option(USE_LMDB "Build bsy with lmdb" ON)
+#option(USE_OPENMP "Build bsy with openmp" ON)
+#option(USE_HDF5 "Build bsy with hdf5" ON)
 
 
 include(cmake/Dependencies.cmake)

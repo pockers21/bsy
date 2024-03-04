@@ -95,6 +95,22 @@ public:
     }
 };
 
+template <typename Dtype>
+Generator<Dtype>* GetGenerator(const DistributeGeneratorParameter& param) {
+  const std::string& type = param.type();
+  if (type == "constant") {
+    return new ConstGenerator<Dtype>(param);
+  } else if (type == "gaussian") {
+    return new GaussianGenerator<Dtype>(param);
+  } else if (type == "uniform") {
+    return new UniformGenerator<Dtype>(param);
+  } else {
+    CHECK(false) << "Unknown filler name: " << param.type();
+  }
+  return (Generator<Dtype>*)(NULL);
+}
+
+
 
 }
 
