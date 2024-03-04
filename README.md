@@ -1,1 +1,2 @@
    bsy is a simplified version of the deep learning framework based on Caffe. It has made some adjustments to Caffe, such as minimizing the dependency on Boost and simplifying the layer registration factory logic.
+   - [Notes](https://egh78l343b.feishu.cn/drive/folder/F11afMbS0lbN78d913wcKDUhnMg?from=from_copylink)
